@@ -56,7 +56,7 @@ export default function QualificationsPage() {
           <li>SFO/FCA investigation familiarity</li>
           <li>CPR Part 35 AND CrPR Part 33 report experience</li>
           <li>Professional indemnity insurance</li>
-          <li>LPP working framework knowledge for corporate instructions</li>
+          <li>LPP working framework knowledge for corporate engageions</li>
         </ul>
 
         <h2>CPR Part 35 & CrPR Part 33</h2>

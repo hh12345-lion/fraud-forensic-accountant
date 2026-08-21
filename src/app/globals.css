@@ -1,17 +1,23 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-charcoal: #1a1a2e;
-  --color-indigo-accent: #4a00e0;
-  --color-crimson: #c0392b;
-  --color-section-alt: #f8f8fc;
-  --color-border: #e0e0f0;
-  --color-heading: #1a1a2e;
-  --color-body: #374151;
-  --font-sans: var(--font-inter);
-  --radius-card: 8px;
-  --radius-small: 4px;
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.08);
+  --color-navy: #0c1929;
+  --color-navy-light: #152238;
+  --color-copper: #b87333;
+  --color-copper-light: #d4956a;
+  --color-signal: #b91c1c;
+  --color-stone: #f5f2ed;
+  --color-stone-dark: #ebe6de;
+  --color-border: #e2ddd4;
+  --color-heading: #0c1929;
+  --color-body: #475569;
+  --color-muted: #64748b;
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-source-serif);
+  --radius-card: 2px;
+  --radius-small: 2px;
+  --shadow-card: 0 1px 2px rgba(12, 25, 41, 0.06);
+  --shadow-elevated: 4px 0 0 0 var(--color-copper);
 }
 
 html {
@@ -22,12 +28,16 @@ html {
 body {
   background: #ffffff;
   color: var(--color-body);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
   overflow-x: hidden;
   min-width: 320px;
 }
 
-/* Responsive tables: scroll on narrow viewports, no page overflow */
+.font-display {
+  font-family: var(--font-source-serif), Georgia, "Times New Roman", serif;
+}
+
+/* Responsive tables */
 .table-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -40,7 +50,6 @@ body {
   min-width: 520px;
 }
 
-/* Prose tables without wrapper still scroll */
 .prose-content > table {
   display: block;
   overflow-x: auto;
@@ -50,14 +59,17 @@ body {
 
 .prose-content h2 {
   color: var(--color-heading);
+  font-family: var(--font-source-serif), Georgia, serif;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  letter-spacing: -0.01em;
 }
 
 .prose-content h3 {
   color: var(--color-heading);
+  font-family: var(--font-source-serif), Georgia, serif;
   font-size: 1.25rem;
   font-weight: 600;
   margin-top: 1.5rem;
@@ -66,7 +78,7 @@ body {
 
 .prose-content p {
   margin-bottom: 1rem;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .prose-content ul {
@@ -83,16 +95,17 @@ body {
 
 .prose-content li {
   margin-bottom: 0.5rem;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .prose-content a {
-  color: var(--color-indigo-accent);
+  color: var(--color-copper);
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .prose-content a:hover {
-  opacity: 0.85;
+  color: var(--color-navy);
 }
 
 .prose-content table {
@@ -110,7 +123,7 @@ body {
 }
 
 .prose-content th {
-  background: var(--color-section-alt);
+  background: var(--color-stone);
   color: var(--color-heading);
   font-weight: 600;
 }
@@ -134,5 +147,16 @@ body {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

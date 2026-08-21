@@ -4,14 +4,14 @@ export const experts = [
     name: "Sarah Mitchell FCA, CFE",
     jobTitle: "Lead Fraud Forensic Accountant",
     description:
-      "Sarah specialises in SFO and Crown Court fraud proceedings, POCA confiscation analysis, and complex asset tracing. She has produced CrPR Part 33 and CPR Part 35 expert reports in cases exceeding £50 million.",
+      "Sarah specialises in SFO and trial court fraud proceedings, POCA confiscation analysis, and complex asset tracing. She has produced CrPR Part 33 and CPR Part 35 expert reports in cases exceeding $50 million.",
     credentials: [
       "FCA (ICAEW)",
       "CFE (ACFE)",
       "POCA confiscation proceedings",
       "SFO investigation support",
     ],
-    areas: ["POCA", "SFO investigations", "Crown Court expert evidence"],
+    areas: ["POCA", "SFO investigations", "trial court expert evidence"],
   },
   {
     slug: "james-okonkwo",
@@ -32,7 +32,7 @@ export const experts = [
     name: "Helen Chen FCA, CFE",
     jobTitle: "Corporate Investigations & DPA Specialist",
     description:
-      "Helen advises corporates on internal investigations under legal professional privilege, SFO self-reporting preparation, DPA financial quantification, and FTPF prevention procedure assessments.",
+      "Helen advises corporations on internal investigations under legal professional privilege, SFO self-reporting preparation, DPA financial quantification, and FTPF prevention procedure assessments.",
     credentials: [
       "FCA (ICAEW)",
       "CFE (ACFE)",

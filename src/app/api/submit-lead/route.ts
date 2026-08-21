@@ -14,11 +14,11 @@ export async function POST(request: NextRequest) {
 
     const fullName = sanitizeLeadText(body.fullName ?? "", 200);
     const email = sanitizeLeadText(body.email ?? "", 320).toLowerCase();
-    const phone = sanitizeLeadText(body.phone ?? "", 50);
+    const message = sanitizeLeadText(body.message ?? "", 4000);
 
-    if (!fullName || !email) {
+    if (!fullName || !email || !message) {
       return NextResponse.json(
-        { success: false, error: "Full name and email are required" },
+        { success: false, error: "Name, email, and message are required" },
         { status: 400 }
       );
     }
@@ -33,14 +33,14 @@ export async function POST(request: NextRequest) {
     const lead: LeadSubmission = {
       fullName,
       email,
-      phone,
-      organisation: sanitizeLeadText(body.organisation ?? "", 200),
+      phone: sanitizeLeadText(body.phone ?? "", 50),
+      organization: sanitizeLeadText(body.organization ?? "", 200),
       role: sanitizeLeadText(body.role ?? "", 120),
       caseCategory: sanitizeLeadText(body.caseCategory ?? "", 120),
       fraudType: sanitizeLeadText(body.fraudType ?? "", 120),
       fraudValue: sanitizeLeadText(body.fraudValue ?? "", 80),
       urgent: sanitizeLeadText(body.urgent ?? "", 80),
-      message: sanitizeLeadText(body.message ?? "", 4000),
+      message,
     };
 
     let sheetsOk = false;

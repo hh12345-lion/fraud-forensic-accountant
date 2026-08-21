@@ -6,9 +6,9 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata = buildMetadata({
-  title: "Who We Help | Fraud Forensic Accountants for Defence, Civil Fraud & Corporates",
+  title: "Who We Help | Fraud Forensic Accountants for Defense, Civil Fraud & Corporations",
   description:
-    "Fraud forensic accountants for criminal defence solicitors, civil fraud solicitors, and corporates facing internal investigations or SFO/FCA enforcement.",
+    "Fraud forensic accountants for criminal defense attorneys, civil fraud attorneys, and corporations facing internal investigations or SFO/FCA enforcement.",
   path: "/who-we-help",
 });
 
@@ -23,7 +23,7 @@ export default function WhoWeHelpPage() {
       />
       <PageHero
         title="Who We Help"
-        subtitle="Fraud forensic accountants for three distinct client groups: criminal defence, civil fraud recovery, and corporates facing internal or regulatory investigations."
+        subtitle="Fraud forensic accountants for three distinct client groups: criminal defense, civil fraud recovery, and corporations facing internal or regulatory investigations."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Who We Help" }]}
       />
       <section className="py-14 md:py-16">
@@ -31,22 +31,22 @@ export default function WhoWeHelpPage() {
           <CardGrid
             items={[
               {
-                title: "Criminal Defence Solicitors",
+                title: "Criminal Defense Attorneys",
                 description:
-                  "Defending individuals and corporates facing SFO, FCA, CPS, HMRC, and NCA fraud investigations and prosecutions.",
+                  "Defending individuals and corporations facing SFO, FCA, CPS, HMRC, and NCA fraud investigations and prosecutions.",
                 href: "/who-we-help/criminal-defence-solicitors",
               },
               {
-                title: "Civil Fraud Solicitors",
+                title: "Civil Fraud Attorneys",
                 description:
                   "Pursuing fraud recovery through freezing injunctions, asset tracing, POCA civil recovery, UWOs, and private prosecution.",
                 href: "/who-we-help/civil-fraud-solicitors",
               },
               {
-                title: "Corporates & Compliance",
+                title: "Corporations & Compliance",
                 description:
                   "Internal investigations, SFO self-reporting, DPA preparation, and FTPF compliance advisory.",
-                href: "/who-we-help/corporates-compliance",
+                href: "/who-we-help/corporations-compliance",
               },
             ]}
           />

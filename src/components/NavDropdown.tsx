@@ -10,13 +10,24 @@ export function NavDropdown({
   href,
   links,
   onNavigate,
+  variant = "light",
 }: {
   label: string;
   href?: string;
   links: NavLink[];
   onNavigate?: () => void;
+  variant?: "light" | "dark";
 }) {
   const [open, setOpen] = useState(false);
+  const isDark = variant === "dark";
+
+  const triggerClass = isDark
+    ? "rounded-sm px-3 py-2 text-sm text-white/85 transition hover:text-white"
+    : "rounded-sm px-3 py-2 text-sm text-body transition hover:text-navy";
+
+  const chevronClass = isDark
+    ? `flex min-h-[44px] min-w-[32px] items-center justify-center rounded-sm px-1 py-2 text-white/70 ${open ? "text-white" : ""}`
+    : `flex min-h-[44px] min-w-[32px] items-center justify-center rounded-sm px-1 py-2 text-muted ${open ? "text-navy" : ""}`;
 
   return (
     <div
@@ -26,19 +37,13 @@ export function NavDropdown({
     >
       <div className="flex items-center">
         {href ? (
-          <Link
-            href={href}
-            className="rounded-l-[4px] px-2 py-2 text-sm text-body hover:bg-section-alt hover:text-charcoal"
-          >
+          <Link href={href} className={triggerClass}>
             {label}
           </Link>
         ) : (
-          <span className="px-2 py-2 text-sm text-body">{label}</span>
+          <span className={triggerClass}>{label}</span>
         )}
-        <span
-          className={`flex min-h-[44px] min-w-[36px] items-center justify-center rounded-r-[4px] px-1 py-2 text-body ${!href ? "rounded-l-[4px] pl-2" : ""} ${open ? "bg-section-alt text-charcoal" : ""}`}
-          aria-hidden
-        >
+        <span className={chevronClass} aria-hidden>
           <svg
             className={`h-4 w-4 transition ${open ? "rotate-180" : ""}`}
             fill="none"
@@ -51,7 +56,7 @@ export function NavDropdown({
       </div>
       <ul
         role="menu"
-        className={`absolute left-0 top-full z-50 mt-0 max-h-[min(70vh,24rem)] min-w-[16rem] overflow-y-auto rounded-[8px] border border-border bg-white py-2 shadow-[var(--shadow-card)] transition-opacity duration-150 ${
+        className={`absolute left-0 top-full z-50 mt-1 max-h-[min(70vh,24rem)] min-w-[16rem] overflow-y-auto rounded-sm border border-border bg-white py-2 shadow-lg transition-opacity duration-150 ${
           open
             ? "pointer-events-auto visible opacity-100"
             : "pointer-events-none invisible opacity-0"
@@ -62,7 +67,7 @@ export function NavDropdown({
             <Link
               href={link.href}
               role="menuitem"
-              className="block px-4 py-2.5 text-sm text-body hover:bg-section-alt hover:text-charcoal"
+              className="block border-l-2 border-transparent px-4 py-2.5 text-sm text-body hover:border-copper hover:bg-stone hover:text-navy"
               onClick={() => {
                 setOpen(false);
                 onNavigate?.();
@@ -89,10 +94,10 @@ export function MobileNavGroup({
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="mb-2">
+    <div className="mb-1">
       <button
         type="button"
-        className="flex min-h-[44px] w-full items-center justify-between rounded-[4px] px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-charcoal hover:bg-section-alt"
+        className="flex min-h-[44px] w-full items-center justify-between border-l-2 border-copper bg-stone/50 px-3 py-2 text-left text-xs font-semibold tracking-wide text-navy uppercase"
         aria-expanded={expanded}
         onClick={() => setExpanded(!expanded)}
       >
@@ -107,12 +112,12 @@ export function MobileNavGroup({
         </svg>
       </button>
       {expanded && (
-        <ul className="mt-1 space-y-1 pl-2">
+        <ul className="mt-1 space-y-0.5 border-l border-border pl-3">
           {links.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="flex min-h-[44px] items-center rounded-[4px] px-3 py-2 text-sm text-body hover:bg-section-alt"
+                className="flex min-h-[44px] items-center px-3 py-2 text-sm text-body hover:text-copper"
                 onClick={onNavigate}
               >
                 {link.label}

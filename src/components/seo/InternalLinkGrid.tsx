@@ -27,7 +27,7 @@ export function InternalLinkGrid({
           <li key={link.href}>
             <Link
               href={link.href}
-              className="flex min-h-[44px] items-center rounded-[4px] border border-border px-3 py-2 text-sm text-body transition hover:border-indigo-accent/40 hover:text-indigo-accent"
+              className="flex min-h-[44px] items-center rounded-[4px] border border-border px-3 py-2 text-sm text-body transition hover:border-copper/40 hover:text-copper"
             >
               {link.label}
             </Link>

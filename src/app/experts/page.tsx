@@ -8,7 +8,7 @@ import { experts } from "@/data/experts";
 export const metadata = buildMetadata({
   title: "Our Fraud Forensic Accountants | Fraud Investigation Specialists",
   description:
-    "FraudForensicAccountant.com connects solicitors and corporates with qualified fraud forensic accountants: CFE and ACA credentialed specialists in civil and criminal fraud proceedings.",
+    "FraudForensicAccountant.com connects attorneys and corporations with qualified fraud forensic accountants: CFE and ACA credentialed specialists in civil and criminal fraud proceedings.",
   path: "/experts",
 });
 
@@ -34,7 +34,7 @@ export default function ExpertsPage() {
       />
       <PageHero
         title="Our Fraud Forensic Accountants"
-        subtitle="Fraud investigation specialists with CFE, ACA, and FCA credentials across civil fraud, criminal defence, and corporate investigations."
+        subtitle="Fraud investigation specialists with CFE, ACA, and FCA credentials across civil fraud, criminal defense, and corporate investigations."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Experts" }]}
       />
       <section className="py-14 md:py-16">
@@ -45,7 +45,7 @@ export default function ExpertsPage() {
               className="rounded-[8px] border border-border bg-white p-6 shadow-[var(--shadow-card)]"
             >
               <h2 className="text-xl font-bold text-heading">{expert.name}</h2>
-              <p className="text-sm font-medium text-indigo-accent">{expert.jobTitle}</p>
+              <p className="text-sm font-medium text-copper">{expert.jobTitle}</p>
               <p className="mt-3 text-body">{expert.description}</p>
               <p className="mt-3 text-sm font-semibold text-heading">Credentials</p>
               <ul className="mt-1 list-disc pl-5 text-sm text-body">

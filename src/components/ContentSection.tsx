@@ -10,7 +10,9 @@ export function ContentSection({
   wide?: boolean;
 }) {
   return (
-    <section className={`py-12 md:py-16 ${alt ? "bg-section-alt" : "bg-white"} ${className}`}>
+    <section
+      className={`py-12 md:py-16 ${alt ? "bg-stone" : "bg-white"} ${className}`}
+    >
       <div
         className={`prose-content mx-auto px-4 sm:px-6 lg:px-8 ${
           wide ? "max-w-6xl" : "max-w-4xl"

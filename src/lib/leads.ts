@@ -6,7 +6,7 @@ export type LeadSubmission = {
   fullName: string;
   email: string;
   phone: string;
-  organisation?: string;
+  organization?: string;
   role?: string;
   caseCategory?: string;
   fraudType?: string;
@@ -26,7 +26,7 @@ export function leadToSheetRow(lead: LeadSubmission): (string | null)[] {
     lead.fullName,
     lead.email.toLowerCase(),
     lead.phone || "",
-    lead.organisation || "",
+    lead.organization || "",
     lead.role || "",
     lead.caseCategory || "",
     lead.fraudType || "",

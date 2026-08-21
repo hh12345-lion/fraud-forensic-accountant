@@ -45,7 +45,7 @@ export function DynamicContentPage({
                 <Link
                   key={r.slug}
                   href={`/case-types/${r.slug}`}
-                  className="flex min-h-[44px] items-center rounded-[8px] border border-border p-4 transition hover:border-indigo-accent/30"
+                  className="flex min-h-[44px] items-center rounded-[8px] border border-border p-4 transition hover:border-copper/30"
                 >
                   <span className="font-medium text-heading">{r.label}</span>
                 </Link>
@@ -54,7 +54,7 @@ export function DynamicContentPage({
                 <Link
                   key={r.slug}
                   href={`/fraud-types/${r.slug}`}
-                  className="flex min-h-[44px] items-center rounded-[8px] border border-border p-4 transition hover:border-indigo-accent/30"
+                  className="flex min-h-[44px] items-center rounded-[8px] border border-border p-4 transition hover:border-copper/30"
                 >
                   <span className="font-medium text-heading">{r.label}</span>
                 </Link>
@@ -66,7 +66,7 @@ export function DynamicContentPage({
                   <Link
                     key={id}
                     href={`/services/${id}`}
-                    className="flex min-h-[44px] items-center rounded-[8px] border border-border p-4 transition hover:border-indigo-accent/30"
+                    className="flex min-h-[44px] items-center rounded-[8px] border border-border p-4 transition hover:border-copper/30"
                   >
                     <span className="font-medium text-heading">{s.title}</span>
                   </Link>

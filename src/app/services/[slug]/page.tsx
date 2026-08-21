@@ -70,8 +70,8 @@ export default async function ServicePage({
             <table className="mt-4 w-full min-w-[320px] border-collapse text-sm">
               <thead>
                 <tr>
-                  <th className="border border-border bg-section-alt px-4 py-2 text-left">Step</th>
-                  <th className="border border-border bg-section-alt px-4 py-2 text-left">Detail</th>
+                  <th className="border border-border bg-stone px-4 py-2 text-left">Step</th>
+                  <th className="border border-border bg-stone px-4 py-2 text-left">Detail</th>
                 </tr>
               </thead>
               <tbody>
@@ -88,13 +88,13 @@ export default async function ServicePage({
           <p className="mt-6 text-sm">
             Related:{" "}
             {fraud && (
-              <Link href={`/fraud-types/${fraud.slug}`} className="text-indigo-accent hover:underline">
+              <Link href={`/fraud-types/${fraud.slug}`} className="text-copper hover:underline">
                 {fraud.title}
               </Link>
             )}
             {fraud && caseT && " · "}
             {caseT && (
-              <Link href={`/case-types/${caseT.slug}`} className="text-indigo-accent hover:underline">
+              <Link href={`/case-types/${caseT.slug}`} className="text-copper hover:underline">
                 {caseT.title}
               </Link>
             )}

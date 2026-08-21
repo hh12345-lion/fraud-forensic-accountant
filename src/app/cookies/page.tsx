@@ -108,7 +108,7 @@ export default function CookiesPage() {
         <h2>How to Manage Cookies</h2>
         <p>
           Use the banner on your first visit, or reopen preferences anytime:{" "}
-          <CookieSettingsButton className="font-medium text-indigo-accent underline" />.
+          <CookieSettingsButton className="font-medium text-copper underline" />.
           You can also clear cookies via your browser settings.
         </p>
 
@@ -121,11 +121,11 @@ export default function CookiesPage() {
         <h2>Contact</h2>
         <p>
           Questions about this policy:{" "}
-          <a href={`mailto:${SITE_EMAIL}`} className="text-indigo-accent hover:underline">
+          <a href={`mailto:${SITE_EMAIL}`} className="text-copper hover:underline">
             {SITE_EMAIL}
           </a>
           . See also our{" "}
-          <Link href="/privacy" className="text-indigo-accent hover:underline">
+          <Link href="/privacy" className="text-copper hover:underline">
             Privacy Policy
           </Link>
           .

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -7,26 +7,33 @@ import { CookieConsentProvider } from "@/components/cookies/CookieConsentProvide
 import { buildMetadata } from "@/lib/metadata";
 import { getDefaultConsentInlineScript } from "@/lib/cookies/consent-mode";
 import { SITE_URL } from "@/lib/site";
+import { SITE_LOCALE } from "@/lib/region";
 import Script from "next/script";
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-source-serif",
   display: "swap",
 });
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#1A1A2E",
+  themeColor: "#0C1929",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   ...buildMetadata({
-    title: "Fraud Forensic Accountant | Civil & Criminal Fraud Investigations",
+    title: "Fraud Forensic Accountant | Global Civil & Criminal Fraud Investigations",
     description:
-      "Find a qualified fraud forensic accountant. Expert witnesses and investigators for civil fraud recovery, criminal defence, SFO investigations, POCA, UWOs, and corporate DPA negotiations.",
+      "Find a qualified fraud forensic accountant worldwide. Expert witnesses and investigators for civil fraud recovery, criminal defense, DOJ and SEC investigations, asset tracing, and corporate compliance.",
     path: "/",
   }),
 };
@@ -37,9 +44,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full`}>
+    <html lang={SITE_LOCALE} className={`${dmSans.variable} ${sourceSerif.variable} h-full`}>
       <head>
-        {/* Google Consent Mode v2 defaults (denied) before any Google tag loads */}
         <Script id="consent-default" strategy="beforeInteractive">
           {getDefaultConsentInlineScript()}
         </Script>

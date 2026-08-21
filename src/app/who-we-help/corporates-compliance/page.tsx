@@ -8,13 +8,13 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbJsonLd, organizationSchema } from "@/lib/schema";
 
 export const metadata = buildMetadata({
-  title: "Fraud Forensic Accountants for Corporates | Internal Investigations & DPA Preparation",
+  title: "Fraud Forensic Accountants for Corporations | Internal Investigations & DPA Preparation",
   description:
-    "Fraud forensic accountants for corporates. Internal fraud investigations, SFO self-reporting support, DPA negotiation, FTPF compliance advisory, and remediation programmes.",
-  path: "/who-we-help/corporates-compliance",
+    "Fraud forensic accountants for corporations. Internal fraud investigations, SFO self-reporting support, DPA negotiation, FTPF compliance advisory, and remediation programmes.",
+  path: "/who-we-help/corporations-compliance",
 });
 
-export default function CorporatesCompliancePage() {
+export default function CorporationsCompliancePage() {
   return (
     <>
       <JsonLd
@@ -25,23 +25,23 @@ export default function CorporatesCompliancePage() {
             breadcrumbJsonLd([
               { name: "Home", path: "/" },
               { name: "Who We Help", path: "/who-we-help" },
-              { name: "Corporates & Compliance", path: "/who-we-help/corporates-compliance" },
+              { name: "Corporations & Compliance", path: "/who-we-help/corporations-compliance" },
             ]),
           ],
         }}
       />
       <PageHero
-        title="Fraud Forensic Accountants for Corporates & Compliance Teams"
+        title="Fraud Forensic Accountants for Corporations & Compliance Teams"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Who We Help", href: "/who-we-help" },
-          { label: "Corporates" },
+          { label: "Corporations" },
         ]}
       />
       <ContentSection>
         <h2>You Don&apos;t Always Know the Full Picture Yet</h2>
         <p>
-          Many corporate fraud investigations begin with a suspicion, tip-off, or regulatory enquiry
+          Many corporate fraud investigations begin with a suspicion, tip-off, or regulatory inquiry
           before the full scope is clear. A fraud forensic accountant helps you understand what you are
           dealing with before you decide how to respond.
         </p>
@@ -49,7 +49,7 @@ export default function CorporatesCompliancePage() {
         <p>Working under legal professional privilege (via your external legal counsel), our fraud forensic accountants:</p>
         <ul>
           <li>Conduct forensic accounting investigation of suspected fraud or misconduct</li>
-          <li>Preserve and analyse financial evidence</li>
+          <li>Preserve and analyze financial evidence</li>
           <li>Quantify the scope and value of any wrongdoing</li>
           <li>Produce investigation reports protected from disclosure to regulators (LPP)</li>
           <li>Advise on whether self-reporting to SFO/FCA is appropriate</li>
@@ -60,7 +60,7 @@ export default function CorporatesCompliancePage() {
           facilitating access to overseas data and waiving privilege over factual accounts as elements
           of cooperation. While self-reporting now explicitly leads to DPA invitation, disclosure
           neither automatically protects against prosecution nor guarantees reduced penalties. Fraud
-          forensic accountants help corporates by quantifying the full scope of misconduct, modelling
+          forensic accountants help corporations by quantifying the full scope of misconduct, modelling
           financial exposure (disgorgement plus penalty), preparing the financial evidence package for
           disclosure, and supporting DPA negotiation on quantum.
         </p>
@@ -72,11 +72,11 @@ export default function CorporatesCompliancePage() {
         </p>
         <h2>FTPF Prevention Procedures</h2>
         <p>
-          The FTPF offence requires large organisations to have reasonable fraud prevention procedures
+          The FTPF offence requires large organizations to have reasonable fraud prevention procedures
           in place. The SFO and CPS updated joint guidance covers general principles, evidential
           considerations, and public interest factors. Fraud forensic accountants assess whether
           existing procedures are adequate and advise on improvements, building the reasonable
-          procedures defence. The offence has been in force since 1 September 2025 under ECCTA 2023.
+          procedures defense. The offence has been in force since 1 September 2025 under ECCTA 2023.
         </p>
         <InternalLinkGrid title="Related case types and guides" links={WHO_WE_HELP_CORPORATE_LINKS} />
       </ContentSection>

@@ -9,7 +9,7 @@ import { guides } from "@/data/guides";
 export const metadata = buildMetadata({
   title: "Guides: Fraud Forensic Accountants | POCA, DPAs, Civil Recovery & More",
   description:
-    "In-depth guides for solicitors and corporates on fraud forensic accountants: POCA confiscation, civil fraud recovery, SFO self-reporting, DPAs, and crypto fraud.",
+    "In-depth guides for attorneys and corporations on fraud forensic accountants: POCA confiscation, civil fraud recovery, SFO self-reporting, DPAs, and crypto fraud.",
   path: "/guides",
 });
 

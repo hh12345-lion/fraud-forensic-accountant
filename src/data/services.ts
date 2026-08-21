@@ -27,9 +27,9 @@ export const services: Service[] = [
     caseType: "corporate-internal-investigation",
     faqs: [
       {
-        question: "When should I instruct a fraud forensic accountant for an investigation?",
+        question: "When should I engage a fraud forensic accountant for an investigation?",
         answer:
-          "Instruct as soon as fraud is suspected and before key evidence is destroyed or accounts are closed. Early instruction preserves transaction data, supports freezing injunction applications, and ensures investigation findings are available for civil, criminal, or regulatory decisions.",
+          "Engage as soon as fraud is suspected and before key evidence is destroyed or accounts are closed. Early engageion preserves transaction data, supports freezing injunction applications, and ensures investigation findings are available for civil, criminal, or regulatory decisions.",
       },
       {
         question: "What deliverables does a fraud investigation produce?",
@@ -67,7 +67,7 @@ export const services: Service[] = [
   {
     id: "poca-confiscation-analysis",
     title: "POCA Confiscation Analysis",
-    short: "Benefit calculation, available assets assessment, and confiscation defence support.",
+    short: "Benefit calculation, available assets assessment, and confiscation defense support.",
     methodology: [
       { step: "Benefit review", detail: "Analyse prosecution benefit calculations." },
       { step: "Legitimate source analysis", detail: "Identify receipts incorrectly included in benefit." },
@@ -76,12 +76,12 @@ export const services: Service[] = [
       { step: "Expert reporting", detail: "Newton hearing and appeal support." },
     ],
     fraudType: "money-laundering-aml",
-    caseType: "poca-confiscation-defence",
+    caseType: "poca-confiscation-defense",
     faqs: [
       {
         question: "How does a forensic accountant challenge POCA benefit figures?",
         answer:
-          "The defence expert reviews prosecution schedules, identifies legitimate business receipts wrongly included, demonstrates alternative sources of funds, and produces a revised benefit calculation for the confiscation hearing or Newton hearing.",
+          "The defense expert reviews prosecution schedules, identifies legitimate business receipts wrongly included, demonstrates alternative sources of funds, and produces a revised benefit calculation for the confiscation hearing or Newton hearing.",
       },
       {
         question: "What is included in available assets analysis?",
@@ -120,13 +120,13 @@ export const services: Service[] = [
   {
     id: "sfo-regulatory-support",
     title: "SFO & Regulatory Investigation Support",
-    short: "Financial analysis for SFO, FCA, HMRC, and NCA investigations and defence.",
+    short: "Financial analysis for SFO, FCA, HMRC, and NCA investigations and defense.",
     methodology: [
       { step: "Document review", detail: "Section 2 production and disclosure analysis." },
       { step: "Financial reconstruction", detail: "Rebuild the financial picture from disclosed materials." },
       { step: "Challenge analysis", detail: "Identify weaknesses in agency financial theories." },
       { step: "Interview preparation", detail: "Financial aspects of Section 2 interviews." },
-      { step: "Expert evidence", detail: "Crown Court and regulatory proceedings support." },
+      { step: "Expert evidence", detail: "trial court and regulatory proceedings support." },
     ],
     fraudType: "bribery-corruption",
     caseType: "sfo-fraud-investigation",
@@ -134,7 +134,7 @@ export const services: Service[] = [
       {
         question: "How does a forensic accountant assist with SFO Section 2 notices?",
         answer:
-          "Before document production, the forensic accountant reviews financial materials, flags privilege issues, and reconstructs the financial narrative the SFO will develop, allowing defence counsel to prepare effectively.",
+          "Before document production, the forensic accountant reviews financial materials, flags privilege issues, and reconstructs the financial narrative the SFO will develop, allowing defense counsel to prepare effectively.",
       },
       {
         question: "Can the same expert support FCA and SFO matters?",
@@ -149,7 +149,7 @@ export const services: Service[] = [
     short: "Disgorgement quantification, penalty modelling, and financial evidence for DPA negotiations.",
     methodology: [
       { step: "Scope quantification", detail: "Full financial scope of misconduct." },
-      { step: "Disgorgement calculation", detail: "Net benefit to the organisation from wrongdoing." },
+      { step: "Disgorgement calculation", detail: "Net benefit to the organization from wrongdoing." },
       { step: "Penalty modelling", detail: "Financial penalty scenarios." },
       { step: "Self-reporting pack", detail: "Financial evidence for disclosure." },
       { step: "Negotiation support", detail: "Ongoing financial analysis during DPA talks." },
@@ -160,12 +160,12 @@ export const services: Service[] = [
       {
         question: "What financial analysis is required before SFO self-reporting?",
         answer:
-          "Corporates need a full quantification of misconduct scope, disgorgement exposure, and penalty scenarios before self-reporting. Forensic accountants produce the financial evidence pack underpinning the disclosure and subsequent DPA negotiation.",
+          "Corporations need a full quantification of misconduct scope, disgorgement exposure, and penalty scenarios before self-reporting. Forensic accountants produce the financial evidence pack underpinning the disclosure and subsequent DPA negotiation.",
       },
       {
         question: "How is disgorgement calculated in a DPA?",
         answer:
-          "Disgorgement is the net benefit the organisation obtained from the misconduct. Forensic accountants trace profits or losses avoided through organisational accounts, netting legitimate costs attributable to tainted activity.",
+          "Disgorgement is the net benefit the organization obtained from the misconduct. Forensic accountants trace profits or losses avoided through organizational accounts, netting legitimate costs attributable to tainted activity.",
       },
     ],
   },
@@ -200,7 +200,7 @@ export const services: Service[] = [
     title: "Expert Witness Reports & Testimony",
     short: "CPR Part 35 and CrPR Part 33 compliant expert reports and court testimony.",
     methodology: [
-      { step: "Instructions", detail: "Clear scope, assumptions, and questions for the expert." },
+      { step: "Engageions", detail: "Clear scope, assumptions, and questions for the expert." },
       { step: "Analysis", detail: "Independent objective financial analysis." },
       { step: "Report drafting", detail: "Compliant structure, declaration, statement of truth." },
       { step: "Joint statement", detail: "Discussion with opposing expert where required." },
@@ -212,7 +212,7 @@ export const services: Service[] = [
       {
         question: "What is the difference between CPR Part 35 and CrPR Part 33 expert reports?",
         answer:
-          "CPR Part 35 governs civil expert evidence in the High Court; CrPR Part 33 governs criminal expert evidence in Crown Court proceedings. Both require independence, objectivity, and a primary duty to the court.",
+          "CPR Part 35 governs civil expert evidence in the High Court; CrPR Part 33 governs criminal expert evidence in trial court proceedings. Both require independence, objectivity, and a primary duty to the court.",
       },
       {
         question: "How long does a complex fraud expert report take to produce?",

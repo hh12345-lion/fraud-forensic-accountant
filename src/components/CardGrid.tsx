@@ -6,16 +6,18 @@ export function CardGrid({
   items: { title: string; description: string; href: string }[];
 }) {
   return (
-    <div className="grid gap-6 sm:grid-cols-2">
+    <div className="grid gap-5 sm:grid-cols-2">
       {items.map((item) => (
         <Link
           key={item.href}
           href={item.href}
-          className="block rounded-[8px] border border-border bg-white p-6 shadow-[var(--shadow-card)] transition hover:border-indigo-accent/30"
+          className="group block border border-border bg-white p-6 shadow-[var(--shadow-elevated)] transition hover:border-copper/40"
         >
-          <h3 className="text-lg font-semibold text-heading">{item.title}</h3>
-          <p className="mt-2 text-sm text-body">{item.description}</p>
-          <span className="mt-4 inline-block text-sm font-medium text-indigo-accent">
+          <h3 className="font-display text-lg font-semibold text-navy group-hover:text-copper">
+            {item.title}
+          </h3>
+          <p className="mt-2 text-sm leading-relaxed text-body">{item.description}</p>
+          <span className="mt-4 inline-block text-sm font-medium text-copper">
             Learn more →
           </span>
         </Link>

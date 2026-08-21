@@ -26,7 +26,7 @@ export function CookieBanner({
       aria-labelledby="cookie-banner-title"
       aria-describedby="cookie-banner-desc"
       aria-modal="true"
-      className="fixed inset-x-0 bottom-0 z-[100] animate-[slideUp_0.35s_ease-out] border-t border-white/10 bg-charcoal px-4 py-5 shadow-[0_-8px_32px_rgba(0,0,0,0.25)] sm:px-6"
+      className="fixed inset-x-0 bottom-0 z-[100] animate-[slideUp_0.35s_ease-out] border-t border-white/10 bg-navy px-4 py-5 shadow-[0_-8px_32px_rgba(0,0,0,0.25)] sm:px-6"
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
         <div className="flex-1">
@@ -35,7 +35,7 @@ export function CookieBanner({
           </h2>
           <p id="cookie-banner-desc" className="mt-2 text-sm leading-relaxed text-white/80">
             We use cookies to run this site securely, understand how it is used, and improve our
-            services. You can accept all cookies, reject non-essential cookies, or customise your
+            services. You can accept all cookies, reject non-essential cookies, or customize your
             preferences. See our{" "}
             <Link href="/cookies" className="font-medium text-white underline hover:no-underline">
               Cookie Policy
@@ -52,21 +52,21 @@ export function CookieBanner({
             ref={acceptRef}
             type="button"
             onClick={onAcceptAll}
-            className="min-h-[44px] rounded-[4px] bg-indigo-accent px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-accent/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-charcoal"
+            className="min-h-[44px] rounded-[4px] bg-copper px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-copper/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy"
           >
             Accept All
           </button>
           <button
             type="button"
             onClick={onRejectNonEssential}
-            className="min-h-[44px] rounded-[4px] border border-white/30 bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-charcoal"
+            className="min-h-[44px] rounded-[4px] border border-white/30 bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy"
           >
             Reject Non-Essential
           </button>
           <button
             type="button"
             onClick={onCustomize}
-            className="min-h-[44px] rounded-[4px] px-5 py-2.5 text-sm font-semibold text-white/90 underline-offset-2 hover:text-white hover:underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-charcoal"
+            className="min-h-[44px] rounded-[4px] px-5 py-2.5 text-sm font-semibold text-white/90 underline-offset-2 hover:text-white hover:underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy"
           >
             Customize Preferences
           </button>

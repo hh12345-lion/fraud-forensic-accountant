@@ -8,13 +8,13 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbJsonLd, organizationSchema } from "@/lib/schema";
 
 export const metadata = buildMetadata({
-  title: "Fraud Forensic Accountants for Civil Fraud Solicitors | Asset Tracing & Recovery",
+  title: "Fraud Forensic Accountants for Civil Fraud Attorneys | Asset Tracing & Recovery",
   description:
-    "Fraud forensic accountants for civil fraud solicitors. Freezing injunction support, asset tracing, POCA civil recovery, UWOs, Norwich Pharmacal, and CPR Part 35 expert reports.",
+    "Fraud forensic accountants for civil fraud attorneys. Freezing injunction support, asset tracing, POCA civil recovery, UWOs, Norwich Pharmacal, and CPR Part 35 expert reports.",
   path: "/who-we-help/civil-fraud-solicitors",
 });
 
-export default function CivilFraudSolicitorsPage() {
+export default function CivilFraudAttorneysPage() {
   return (
     <>
       <JsonLd
@@ -25,13 +25,13 @@ export default function CivilFraudSolicitorsPage() {
             breadcrumbJsonLd([
               { name: "Home", path: "/" },
               { name: "Who We Help", path: "/who-we-help" },
-              { name: "Civil Fraud Solicitors", path: "/who-we-help/civil-fraud-solicitors" },
+              { name: "Civil Fraud Attorneys", path: "/who-we-help/civil-fraud-solicitors" },
             ]),
           ],
         }}
       />
       <PageHero
-        title="Fraud Forensic Accountants for Civil Fraud Solicitors"
+        title="Fraud Forensic Accountants for Civil Fraud Attorneys"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Who We Help", href: "/who-we-help" },
@@ -39,7 +39,7 @@ export default function CivilFraudSolicitorsPage() {
         ]}
       />
       <ContentSection>
-        <h2>What Civil Fraud Solicitors Need</h2>
+        <h2>What Civil Fraud Attorneys Need</h2>
         <p>
           Expert evidence for freezing injunction applications, asset tracing analysis, civil recovery
           proceeds calculations, and CPR Part 35 compliant expert reports for High Court civil fraud
@@ -62,10 +62,10 @@ export default function CivilFraudSolicitorsPage() {
         </ol>
         <h2>Unexplained Wealth Orders (UWO)</h2>
         <p>
-          UWOs are available to the SFO, NCA, HMRC, CPS, and FCA for assets over £50,000 where
+          UWOs are available to the SFO, NCA, HMRC, CPS, and FCA for assets over $50,000 where
           there are reasonable grounds to suspect the holder lacks legitimate income to have obtained
           them. Contesting a UWO requires High Court advocacy and forensic accounting to trace the
-          audit trail of acquisition funds. For claimant solicitors, our experts assist with financial
+          audit trail of acquisition funds. For claimant attorneys, our experts assist with financial
           evidence establishing grounds for application. For respondents, we assist with rebuttal by
           tracing legitimate sources of wealth.
         </p>
@@ -84,7 +84,7 @@ export default function CivilFraudSolicitorsPage() {
         </p>
         <InternalLinkGrid title="Related case types and guides" links={WHO_WE_HELP_CIVIL_LINKS} />
       </ContentSection>
-      <BottomCTA buttonText="Instruct an Expert" />
+      <BottomCTA buttonText="Engage an Expert" />
     </>
   );
 }

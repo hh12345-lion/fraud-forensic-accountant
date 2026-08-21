@@ -58,7 +58,7 @@ export default async function CaseTypePage({
         page={page}
         extraLinks={[
           { href: "/case-types", label: "All case types" },
-          { href: "/how-to-instruct", label: "How to instruct" },
+          { href: "/how-to-instruct", label: "How to engage" },
         ]}
       />
     </>

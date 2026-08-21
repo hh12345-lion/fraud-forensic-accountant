@@ -10,20 +10,20 @@ import { ResponsiveTable } from "@/components/ResponsiveTable";
 import { services } from "@/data/services";
 
 const enforcementFacts = [
-  { fact: "SFO new investigations 2025", figure: "8 opened", source: "SFO 2025-26 Plan" },
-  { fact: "SFO cases listed for trial 2026", figure: "5", source: "SFO 2025-26 Plan" },
-  { fact: "FTPF offence in force", figure: "1 September 2025", source: "ECCTA 2023" },
+  { fact: "DOJ corporate fraud enforcement priority", figure: "Expanded 2025", source: "DOJ Criminal Division" },
+  { fact: "SEC enforcement actions (FY2025)", figure: "784+", source: "SEC Annual Report" },
+  { fact: "FCPA self-reporting credit policy", figure: "Updated 2025", source: "DOJ/SEC guidance" },
   {
-    fact: "HMRC whistleblower reward",
-    figure: "15-30% of £1.5M+ recovered",
-    source: "HMRC Strengthened Reward Scheme",
+    fact: "IRS whistleblower awards (large cases)",
+    figure: "15–30% of recovery",
+    source: "IRS Whistleblower Program",
   },
-  { fact: "UWO annual report published", figure: "February 2026", source: "NCA/Home Office" },
-  { fact: "Cryptoasset FCA full regulation", figure: "October 2027", source: "HM Treasury 2025" },
+  { fact: "FinCEN beneficial ownership rule", figure: "Fully effective 2025", source: "FinCEN" },
+  { fact: "Digital asset SEC registration deadline", figure: "2027", source: "SEC rulemaking" },
   {
-    fact: "DPA explicit invitation policy",
-    figure: "Self-reporting = DPA invitation",
-    source: "SFO/CPS 2025 guidance",
+    fact: "Corporate cooperation policy",
+    figure: "Early disclosure incentivized",
+    source: "DOJ Corporate Enforcement Policy",
   },
 ];
 
@@ -31,37 +31,65 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={homepageGraph()} />
-      <section className="bg-charcoal py-14 md:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Fraud Forensic Accountant Services for Solicitors & Corporates
-          </h1>
-          <p className="mt-6 max-w-4xl text-lg text-white/80">
-            Whether you are defending a fraud prosecution, pursuing civil recovery, conducting an
-            internal investigation, or preparing for SFO self-reporting, you need a forensic
-            accountant who understands the full landscape of fraud: civil, criminal, and regulatory.
-            FraudForensicAccountant.com connects solicitors and corporates with qualified fraud
-            forensic accountants across every context.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Link
-              href="/who-we-help/criminal-defence-solicitors"
-              className="inline-flex min-h-[44px] items-center justify-center rounded-[4px] bg-indigo-accent px-6 py-3 font-semibold text-white hover:bg-indigo-accent/90"
-            >
-              Criminal Defence
-            </Link>
-            <Link
-              href="/who-we-help/civil-fraud-solicitors"
-              className="inline-flex min-h-[44px] items-center justify-center rounded-[4px] border border-white/30 px-6 py-3 font-semibold text-white hover:bg-white/10"
-            >
-              Civil Fraud Recovery
-            </Link>
-            <Link
-              href="/who-we-help/corporates-compliance"
-              className="inline-flex min-h-[44px] items-center justify-center rounded-[4px] border border-white/30 px-6 py-3 font-semibold text-white hover:bg-white/10"
-            >
-              Corporate / Internal
-            </Link>
+      <section className="border-b border-border bg-stone py-16 md:py-24">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
+          <div className="lg:col-span-7">
+            <p className="text-xs font-semibold tracking-[0.2em] text-copper uppercase">
+              Global forensic accounting
+            </p>
+            <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-navy sm:text-4xl lg:text-5xl lg:leading-tight">
+              Fraud Forensic Accountant Services for Law Firms & Corporations
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-body">
+              Whether you are defending a fraud prosecution, pursuing civil recovery, conducting an
+              internal investigation, or preparing for regulatory self-disclosure, you need a forensic
+              accountant who understands the full landscape of fraud: civil, criminal, and regulatory.
+              FraudForensicAccountant.com connects law firms and corporations with qualified fraud
+              forensic accountants across jurisdictions worldwide.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/who-we-help/criminal-defence-solicitors"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-copper px-6 py-3 font-semibold text-white hover:bg-copper-light"
+              >
+                Criminal Defense
+              </Link>
+              <Link
+                href="/who-we-help/civil-fraud-solicitors"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-navy/20 bg-white px-6 py-3 font-semibold text-navy hover:border-copper hover:text-copper"
+              >
+                Civil Fraud Recovery
+              </Link>
+              <Link
+                href="/who-we-help/corporations-compliance"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-navy/20 bg-white px-6 py-3 font-semibold text-navy hover:border-copper hover:text-copper"
+              >
+                Corporate / Internal
+              </Link>
+            </div>
+          </div>
+          <div className="flex items-center lg:col-span-5">
+            <div className="w-full border-l-4 border-copper bg-white p-8 shadow-[var(--shadow-card)]">
+              <h2 className="font-display text-xl font-semibold text-navy">What we connect you with</h2>
+              <ul className="mt-4 space-y-3 text-sm text-body">
+                <li className="flex gap-2">
+                  <span className="text-copper">—</span>
+                  Certified fraud examiners and CPA forensic specialists
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-copper">—</span>
+                  Asset tracing and financial reconstruction
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-copper">—</span>
+                  Expert witness reports for trial and arbitration
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-copper">—</span>
+                  Cross-border investigation support
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -70,7 +98,7 @@ export default function HomePage() {
 
       <section className="py-14 md:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-heading sm:text-3xl">
+          <h2 className="font-display text-2xl font-semibold text-navy sm:text-3xl">
             What Our Fraud Forensic Accountants Cover
           </h2>
           <div className="mt-8">
@@ -83,29 +111,29 @@ export default function HomePage() {
             />
           </div>
           <p className="mt-6 text-center">
-            <Link href="/services" className="font-medium text-indigo-accent hover:underline">
+            <Link href="/services" className="font-medium text-copper hover:underline">
               View all services →
             </Link>
           </p>
         </div>
       </section>
 
-      <section className="bg-section-alt py-14 md:py-16">
+      <section className="bg-stone py-14 md:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-heading sm:text-3xl">
-            Fraud Enforcement: Key 2025-2026 Facts
+          <h2 className="font-display text-2xl font-semibold text-navy sm:text-3xl">
+            Fraud Enforcement: Key 2025–2026 Facts
           </h2>
           <ResponsiveTable>
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="bg-white">
-                  <th className="border border-border px-4 py-3 text-left font-semibold text-heading">
+                  <th className="border border-border px-4 py-3 text-left font-semibold text-navy">
                     Fact
                   </th>
-                  <th className="border border-border px-4 py-3 text-left font-semibold text-heading">
+                  <th className="border border-border px-4 py-3 text-left font-semibold text-navy">
                     Figure
                   </th>
-                  <th className="border border-border px-4 py-3 text-left font-semibold text-heading">
+                  <th className="border border-border px-4 py-3 text-left font-semibold text-navy">
                     Source
                   </th>
                 </tr>
@@ -121,42 +149,46 @@ export default function HomePage() {
               </tbody>
             </table>
           </ResponsiveTable>
-          <p className="mt-4 text-xs text-body">
-            Sources: SFO 2025-26 Strategic Plan; ECCTA 2023; HMRC Strengthened Reward Scheme
-            guidance; SFO/CPS Corporate Prosecution Guidance 2025; HM Treasury cryptoasset regulations.
+          <p className="mt-4 text-xs text-muted">
+            Sources: DOJ Criminal Division; SEC Annual Report; DOJ/SEC FCPA guidance; IRS Whistleblower
+            Program; FinCEN; SEC rulemaking; DOJ Corporate Enforcement Policy.
           </p>
         </div>
       </section>
 
       <section className="py-14 md:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-heading sm:text-3xl">Three Types of Client We Serve</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <h2 className="font-display text-2xl font-semibold text-navy sm:text-3xl">
+            Three Types of Clients We Serve
+          </h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
             {[
               {
-                title: "Criminal Defence",
-                desc: "Defending individuals or corporates facing SFO, FCA, CPS, NCA, or HMRC fraud investigations. POCA benefit calculation, available assets, confiscation defence.",
+                title: "Criminal Defense",
+                desc: "Defending individuals or corporations facing DOJ, SEC, FBI, or IRS fraud investigations. Asset forfeiture analysis, benefit calculation, and defense support.",
                 href: "/who-we-help/criminal-defence-solicitors",
               },
               {
                 title: "Civil Fraud Recovery",
-                desc: "Pursuing fraudsters through civil proceedings: freezing injunctions, asset tracing, UWOs, Norwich Pharmacal orders, civil recovery, and private prosecution support.",
+                desc: "Pursuing fraudsters through civil proceedings: asset freezes, tracing, discovery orders, civil RICO, and private prosecution support.",
                 href: "/who-we-help/civil-fraud-solicitors",
               },
               {
                 title: "Corporate / Internal",
-                desc: "Internal investigations, SFO self-reporting preparation, DPA negotiation support, FTPF compliance advisory, and remediation programme assessment.",
-                href: "/who-we-help/corporates-compliance",
+                desc: "Internal investigations, regulatory self-disclosure preparation, deferred prosecution agreement support, FCPA compliance advisory, and remediation assessment.",
+                href: "/who-we-help/corporations-compliance",
               },
             ].map((card) => (
               <Link
                 key={card.href}
                 href={card.href}
-                className="block rounded-[8px] border border-border bg-white p-6 shadow-[var(--shadow-card)] hover:border-indigo-accent/30"
+                className="group block border border-border bg-white p-6 shadow-[var(--shadow-elevated)] hover:border-copper/40"
               >
-                <h3 className="text-lg font-semibold text-heading">{card.title}</h3>
-                <p className="mt-2 text-sm text-body">{card.desc}</p>
-                <span className="mt-4 inline-block text-sm font-medium text-indigo-accent">
+                <h3 className="font-display text-lg font-semibold text-navy group-hover:text-copper">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-body">{card.desc}</p>
+                <span className="mt-4 inline-block text-sm font-medium text-copper">
                   Learn more →
                 </span>
               </Link>
@@ -166,7 +198,7 @@ export default function HomePage() {
             New to fraud forensic accounting?{" "}
             <Link
               href="/what-is-a-fraud-forensic-accountant"
-              className="font-medium text-indigo-accent hover:underline"
+              className="font-medium text-copper hover:underline"
             >
               What is a fraud forensic accountant?
             </Link>
@@ -182,7 +214,7 @@ export default function HomePage() {
               ...HOMEPAGE_HUB_LINKS,
               { href: "/fraud-forensic-accounting-explained", label: "Fraud forensic accounting explained" },
               { href: "/services", label: "All services" },
-              { href: "/contact", label: "Instruct an expert" },
+              { href: "/contact", label: "Request a consultation" },
             ]}
             columns={3}
             className="!mt-0 !border-0 pt-0"

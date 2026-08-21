@@ -48,7 +48,7 @@ export default function WhatIsPage() {
               <tr>
                 <th>Role</th>
                 <th>Primary Focus</th>
-                <th>Typical Instructions</th>
+                <th>Typical Engageions</th>
               </tr>
             </thead>
             <tbody>
@@ -75,14 +75,14 @@ export default function WhatIsPage() {
         </p>
         <h3>Criminal Fraud</h3>
         <p>
-          In criminal proceedings, fraud forensic accountants assist defence teams by challenging POCA
+          In criminal proceedings, fraud forensic accountants assist defense teams by challenging POCA
           benefit calculations, identifying legitimate sources of assets, and providing expert evidence
           challenging the prosecution&apos;s financial analysis. They also support prosecution-side
-          instructions.
+          engageions.
         </p>
         <h3>Corporate / Regulatory</h3>
         <p>
-          Corporates facing SFO, FCA, NCA, or HMRC investigation need forensic accountants to conduct
+          Corporations facing SFO, FCA, NCA, or HMRC investigation need forensic accountants to conduct
           internal investigations under legal professional privilege, assess the quantum of any
           wrongdoing, and prepare evidence packs for self-reporting and DPA negotiations.
         </p>
@@ -101,8 +101,8 @@ export default function WhatIsPage() {
         </p>
         <p>
           <strong>ECCTA 2023 (FTPF):</strong> The Failure to Prevent Fraud offence makes large
-          organisations criminally liable if they fail to prevent employees committing fraud for the
-          organisation&apos;s benefit. In force from 1 September 2025.
+          organizations criminally liable if they fail to prevent employees committing fraud for the
+          organization&apos;s benefit. In force from 1 September 2025.
         </p>
         <h2>When Is a Fraud Forensic Accountant Needed?</h2>
         <h3>Civil proceedings</h3>
@@ -114,11 +114,11 @@ export default function WhatIsPage() {
           <li>Private prosecution for fraud</li>
           <li>Asset recovery proceedings</li>
         </ul>
-        <h3>Criminal defence</h3>
+        <h3>Criminal defense</h3>
         <ul>
           <li>SFO, FCA, CPS, HMRC, or NCA investigation</li>
           <li>Contested POCA confiscation hearing</li>
-          <li>Crown Court fraud trial</li>
+          <li>trial court fraud trial</li>
           <li>DPA negotiation support</li>
         </ul>
         <h3>Corporate</h3>

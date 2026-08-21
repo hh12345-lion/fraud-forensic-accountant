@@ -90,7 +90,7 @@ export default function FraudExplainedPage() {
             <tr>
               <td>Forum</td>
               <td>High Court (Chancery/Commercial)</td>
-              <td>Crown Court</td>
+              <td>trial court</td>
             </tr>
             <tr>
               <td>Can proceed simultaneously</td>
@@ -107,7 +107,7 @@ export default function FraudExplainedPage() {
           The court makes a confiscation order following conviction. Benefit from criminal conduct is
           calculated on a gross proceeds basis (all proceeds, not net gain). Available assets are
           assessed. The order equals the lesser of benefit and available assets.{" "}
-          <Link href="/case-types/poca-confiscation-defence">POCA confiscation defence support →</Link>
+          <Link href="/case-types/poca-confiscation-defense">POCA confiscation defense support →</Link>
         </p>
         <h3>Civil recovery (Part 5)</h3>
         <p>
@@ -125,7 +125,7 @@ export default function FraudExplainedPage() {
         <h2>Unexplained Wealth Orders (UWO)</h2>
         <p>
           A UWO is a High Court order requiring a respondent to explain the source of their wealth in
-          relation to specified property worth more than £50,000. The SFO, NCA, HMRC, CPS, and FCA may
+          relation to specified property worth more than $50,000. The SFO, NCA, HMRC, CPS, and FCA may
           apply. The UWO annual report published in February 2026 confirms active enforcement.
         </p>
         <p>
@@ -151,7 +151,7 @@ export default function FraudExplainedPage() {
           <li>Costs</li>
         </ol>
         <p>
-          The forensic accountant quantifies benefit to the organisation from misconduct: the number
+          The forensic accountant quantifies benefit to the organization from misconduct: the number
           around which the entire DPA financial negotiation revolves.{" "}
           <Link href="/guides/dpa-financial-quantification-guide">DPA quantification guide →</Link>
         </p>
@@ -212,14 +212,14 @@ export default function FraudExplainedPage() {
 
         <h2>The FTPF Offence: Corporate Accountability</h2>
         <p>
-          The Failure to Prevent Fraud offence under ECCTA 2023 makes large organisations criminally
-          liable if they fail to prevent employees committing fraud for the organisation&apos;s benefit.
+          The Failure to Prevent Fraud offence under ECCTA 2023 makes large organizations criminally
+          liable if they fail to prevent employees committing fraud for the organization&apos;s benefit.
           In force from 1 September 2025, it applies to large bodies corporate and partnerships.
-          Organisations may rely on reasonable fraud prevention procedures as a defence.
+          Organizations may rely on reasonable fraud prevention procedures as a defense.
         </p>
         <p>
-          Forensic accountants assess procedure adequacy, support corporates building compliance
-          programmes, and assist in enforcement defence by analysing whether procedures were reasonable
+          Forensic accountants assess procedure adequacy, support corporations building compliance
+          programmes, and assist in enforcement defense by analyzing whether procedures were reasonable
           in the circumstances.
         </p>
 
@@ -230,7 +230,7 @@ export default function FraudExplainedPage() {
         </p>
         <p>
           <strong>Criminal:</strong> <Link href="/qualifications">CrPR Part 33</Link> imposes equivalent
-          duties in Crown Court proceedings.
+          duties in trial court proceedings.
         </p>
         <p>
           Explore our{" "}

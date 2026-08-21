@@ -28,7 +28,7 @@ export default function ServicesPage() {
       />
       <PageHero
         title="Fraud Forensic Accountant Services"
-        subtitle="Comprehensive fraud forensic accounting services for civil fraud, criminal defence, and corporate regulatory matters."
+        subtitle="Comprehensive fraud forensic accounting services for civil fraud, criminal defense, and corporate regulatory matters."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
       <section className="py-14 md:py-16">

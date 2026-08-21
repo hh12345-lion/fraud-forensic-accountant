@@ -16,25 +16,35 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 64,
-          background: "#1A1A2E",
-          color: "#FFFFFF",
+          background: "#F5F2ED",
+          color: "#0C1929",
         }}
       >
         <div
           style={{
-            fontSize: 28,
+            width: 4,
+            height: 80,
+            background: "#B87333",
+            marginBottom: 32,
+          }}
+        />
+        <div
+          style={{
+            fontSize: 24,
             fontWeight: 600,
-            color: "#4A00E0",
-            marginBottom: 16,
+            color: "#B87333",
+            marginBottom: 12,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
           }}
         >
-          FraudForensicAccountant.com
+          Global · FraudForensicAccountant.com
         </div>
-        <div style={{ fontSize: 56, fontWeight: 700, lineHeight: 1.15, maxWidth: 900 }}>
+        <div style={{ fontSize: 56, fontWeight: 600, lineHeight: 1.15, maxWidth: 900 }}>
           Fraud Forensic Accountant
         </div>
-        <div style={{ fontSize: 28, marginTop: 24, color: "rgba(255,255,255,0.85)" }}>
-          Civil and criminal fraud investigations | POCA | UWOs | DPAs
+        <div style={{ fontSize: 26, marginTop: 24, color: "#475569" }}>
+          Civil and criminal fraud investigations · Asset tracing · Expert testimony
         </div>
       </div>
     ),

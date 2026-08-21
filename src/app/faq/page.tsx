@@ -44,7 +44,7 @@ export default function FaqPage() {
                   {related.map((link, i) => (
                     <span key={link.href}>
                       {i > 0 && " · "}
-                      <Link href={link.href} className="text-indigo-accent hover:underline">
+                      <Link href={link.href} className="text-copper hover:underline">
                         {link.label}
                       </Link>
                     </span>

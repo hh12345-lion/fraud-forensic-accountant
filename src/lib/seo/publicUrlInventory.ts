@@ -14,7 +14,7 @@ export const APP_STATIC_PATHS = [
   "/who-we-help",
   "/who-we-help/criminal-defence-solicitors",
   "/who-we-help/civil-fraud-solicitors",
-  "/who-we-help/corporates-compliance",
+  "/who-we-help/corporations-compliance",
   "/fraud-types",
   "/case-types",
   "/qualifications",

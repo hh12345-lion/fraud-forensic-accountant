@@ -8,12 +8,12 @@ export const faqRelatedLinks: Record<string, InternalLink[]> = {
   ],
   "What is the difference between civil fraud and criminal fraud?": [
     { href: "/fraud-forensic-accounting-explained", label: "Civil vs criminal comparison table" },
-    { href: "/who-we-help/civil-fraud-solicitors", label: "Civil fraud solicitors" },
-    { href: "/who-we-help/criminal-defence-solicitors", label: "Criminal defence" },
+    { href: "/who-we-help/civil-fraud-solicitors", label: "Civil fraud attorneys" },
+    { href: "/who-we-help/criminal-defence-solicitors", label: "Criminal defense" },
   ],
   "What is POCA and how does it affect fraud proceedings?": [
     { href: "/guides/poca-confiscation-guide", label: "POCA confiscation guide" },
-    { href: "/case-types/poca-confiscation-defence", label: "POCA confiscation defence" },
+    { href: "/case-types/poca-confiscation-defense", label: "POCA confiscation defense" },
   ],
   "What is an unexplained wealth order?": [
     { href: "/case-types/unexplained-wealth-orders", label: "UWO forensic support" },
@@ -25,7 +25,7 @@ export const faqRelatedLinks: Record<string, InternalLink[]> = {
   ],
   "What is the Failure to Prevent Fraud offence?": [
     { href: "/what-is-a-fraud-forensic-accountant", label: "FTPF and forensic accountants" },
-    { href: "/who-we-help/corporates-compliance", label: "Corporates and compliance" },
+    { href: "/who-we-help/corporations-compliance", label: "Corporations and compliance" },
   ],
   "How does a forensic accountant trace cryptocurrency?": [
     { href: "/fraud-types/crypto-fraud-digital-assets", label: "Crypto fraud" },
@@ -45,10 +45,10 @@ export const faqRelatedLinks: Record<string, InternalLink[]> = {
   ],
   "How much does a fraud forensic accountant cost?": [
     { href: "/fees", label: "Fees guide" },
-    { href: "/how-to-instruct", label: "How to instruct" },
+    { href: "/how-to-instruct", label: "How to engage" },
   ],
   "What is legal professional privilege in fraud investigations?": [
     { href: "/guides/internal-investigation-lpp-guide", label: "LPP and internal investigations" },
-    { href: "/who-we-help/corporates-compliance", label: "Corporate investigations" },
+    { href: "/who-we-help/corporations-compliance", label: "Corporate investigations" },
   ],
 };

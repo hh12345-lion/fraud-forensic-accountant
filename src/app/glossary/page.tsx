@@ -44,7 +44,7 @@ export default function GlossaryPage() {
               {term.slug && (
                 <>
                   {" "}
-                  <Link href={term.slug} className="text-indigo-accent hover:underline">
+                  <Link href={term.slug} className="text-copper hover:underline">
                     Learn more →
                   </Link>
                 </>

@@ -3,12 +3,12 @@
 export type InternalLink = { href: string; label: string };
 
 export const PILLAR_PAGE_LINKS: InternalLink[] = [
-  { href: "/who-we-help/criminal-defence-solicitors", label: "Criminal defence solicitors" },
-  { href: "/who-we-help/civil-fraud-solicitors", label: "Civil fraud solicitors" },
-  { href: "/who-we-help/corporates-compliance", label: "Corporates and compliance" },
+  { href: "/who-we-help/criminal-defence-solicitors", label: "Criminal defense attorneys" },
+  { href: "/who-we-help/civil-fraud-solicitors", label: "Civil fraud attorneys" },
+  { href: "/who-we-help/corporations-compliance", label: "Corporations and compliance" },
   { href: "/fraud-types", label: "Types of fraud" },
   { href: "/case-types/sfo-fraud-investigation", label: "SFO fraud investigation" },
-  { href: "/case-types/poca-confiscation-defence", label: "POCA confiscation defence" },
+  { href: "/case-types/poca-confiscation-defense", label: "POCA confiscation defense" },
   { href: "/case-types/civil-fraud-recovery-proceedings", label: "Civil fraud recovery" },
   { href: "/case-types/unexplained-wealth-orders", label: "Unexplained wealth orders" },
   { href: "/case-types/deferred-prosecution-agreement", label: "Deferred prosecution agreements" },
@@ -18,17 +18,17 @@ export const PILLAR_PAGE_LINKS: InternalLink[] = [
   { href: "/glossary#poca-2002-proceeds-of-crime-act", label: "POCA 2002" },
   { href: "/glossary#unexplained-wealth-order-uwo", label: "Unexplained wealth orders" },
   { href: "/glossary#deferred-prosecution-agreement-dpa", label: "DPAs" },
-  { href: "/guides", label: "Solicitor guides" },
+  { href: "/guides", label: "Attorney guides" },
   { href: "/guides/sfo-enforcement-update-2025", label: "SFO enforcement update 2025-2026" },
   { href: "/guides/poca-confiscation-guide", label: "POCA confiscation guide" },
   { href: "/what-is-a-fraud-forensic-accountant", label: "What is a fraud forensic accountant?" },
   { href: "/qualifications", label: "Expert qualifications" },
-  { href: "/contact", label: "Instruct an expert" },
+  { href: "/contact", label: "Engage an expert" },
 ];
 
 export const STANDARD_CONTENT_FOOTER_LINKS: InternalLink[] = [
   { href: "/fraud-forensic-accounting-explained", label: "Fraud forensic accounting explained" },
-  { href: "/how-to-instruct", label: "How to instruct" },
+  { href: "/how-to-instruct", label: "How to engage" },
   { href: "/qualifications", label: "Qualifications" },
   { href: "/faq", label: "FAQ" },
 ];
@@ -42,12 +42,12 @@ export const HOMEPAGE_HUB_LINKS: InternalLink[] = [
 ];
 
 export const WHO_WE_HELP_CRIMINAL_LINKS: InternalLink[] = [
-  { href: "/case-types/poca-confiscation-defence", label: "POCA confiscation defence" },
+  { href: "/case-types/poca-confiscation-defense", label: "POCA confiscation defense" },
   { href: "/case-types/sfo-fraud-investigation", label: "SFO fraud investigation" },
   { href: "/guides/poca-confiscation-guide", label: "POCA confiscation guide" },
   { href: "/services/poca-confiscation-analysis", label: "POCA confiscation analysis" },
-  { href: "/who-we-help/civil-fraud-solicitors", label: "Also: civil fraud solicitors" },
-  { href: "/who-we-help/corporates-compliance", label: "Also: corporates and compliance" },
+  { href: "/who-we-help/civil-fraud-solicitors", label: "Also: civil fraud attorneys" },
+  { href: "/who-we-help/corporations-compliance", label: "Also: corporations and compliance" },
 ];
 
 export const WHO_WE_HELP_CIVIL_LINKS: InternalLink[] = [
@@ -55,7 +55,7 @@ export const WHO_WE_HELP_CIVIL_LINKS: InternalLink[] = [
   { href: "/case-types/unexplained-wealth-orders", label: "Unexplained wealth orders" },
   { href: "/guides/civil-fraud-recovery-forensic-guide", label: "Civil fraud recovery guide" },
   { href: "/services/asset-tracing-recovery", label: "Asset tracing and recovery" },
-  { href: "/who-we-help/criminal-defence-solicitors", label: "Also: criminal defence" },
+  { href: "/who-we-help/criminal-defence-solicitors", label: "Also: criminal defense" },
 ];
 
 export const WHO_WE_HELP_CORPORATE_LINKS: InternalLink[] = [
@@ -64,18 +64,18 @@ export const WHO_WE_HELP_CORPORATE_LINKS: InternalLink[] = [
   { href: "/guides/sfo-enforcement-update-2025", label: "SFO enforcement update 2025-2026" },
   { href: "/guides/internal-investigation-lpp-guide", label: "Internal investigation and LPP" },
   { href: "/services/dpa-preparation-support", label: "DPA preparation support" },
-  { href: "/who-we-help/criminal-defence-solicitors", label: "Also: criminal defence" },
+  { href: "/who-we-help/criminal-defence-solicitors", label: "Also: criminal defense" },
 ];
 
 export const WHAT_IS_LINKS: InternalLink[] = [
   { href: "/fraud-forensic-accounting-explained", label: "Fraud forensic accounting explained" },
   { href: "/qualifications", label: "Qualifications and CPR Part 35" },
-  { href: "/case-types/poca-confiscation-defence", label: "POCA confiscation defence" },
+  { href: "/case-types/poca-confiscation-defense", label: "POCA confiscation defense" },
   { href: "/case-types/unexplained-wealth-orders", label: "Unexplained wealth orders" },
-  { href: "/who-we-help/criminal-defence-solicitors", label: "Criminal defence solicitors" },
-  { href: "/who-we-help/civil-fraud-solicitors", label: "Civil fraud solicitors" },
+  { href: "/who-we-help/criminal-defence-solicitors", label: "Criminal defense attorneys" },
+  { href: "/who-we-help/civil-fraud-solicitors", label: "Civil fraud attorneys" },
   { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Instruct an expert" },
+  { href: "/contact", label: "Engage an expert" },
 ];
 
 export const GUIDE_STANDARD_LINKS: InternalLink[] = [

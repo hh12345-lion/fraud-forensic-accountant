@@ -54,7 +54,7 @@ export function CookiePreferencesModal({
     <div className="fixed inset-0 z-[110] flex items-end justify-center p-4 sm:items-center">
       <button
         type="button"
-        className="absolute inset-0 bg-charcoal/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-navy/60 backdrop-blur-sm"
         aria-label="Close cookie preferences"
         onClick={forceShow ? undefined : onClose}
         tabIndex={-1}
@@ -67,7 +67,7 @@ export function CookiePreferencesModal({
         tabIndex={-1}
         className="relative z-10 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-[8px] border border-border bg-white shadow-[var(--shadow-card)] animate-[fadeIn_0.25s_ease-out]"
       >
-        <div className="border-b border-border bg-charcoal px-5 py-4">
+        <div className="border-b border-border bg-navy px-5 py-4">
           <h2 id={titleId} className="text-lg font-bold text-white">
             Cookie Preferences
           </h2>
@@ -95,19 +95,19 @@ export function CookiePreferencesModal({
                   checked={draft[cat.id]}
                   disabled={cat.required}
                   onChange={(e) => toggleCategory(cat.id, e.target.checked)}
-                  className="mt-1 h-5 w-5 rounded border-border text-indigo-accent focus:ring-indigo-accent"
+                  className="mt-1 h-5 w-5 rounded border-border text-copper focus:ring-copper"
                 />
               </label>
             </div>
           ))}
         </div>
 
-        <div className="flex flex-col gap-2 border-t border-border bg-section-alt p-5 sm:flex-row sm:justify-end">
+        <div className="flex flex-col gap-2 border-t border-border bg-stone p-5 sm:flex-row sm:justify-end">
           {!forceShow && (
             <button
               type="button"
               onClick={onClose}
-              className="min-h-[44px] rounded-[4px] border border-border bg-white px-5 py-2.5 text-sm font-semibold text-heading hover:bg-section-alt focus:outline-none focus:ring-2 focus:ring-indigo-accent"
+              className="min-h-[44px] rounded-[4px] border border-border bg-white px-5 py-2.5 text-sm font-semibold text-heading hover:bg-stone focus:outline-none focus:ring-2 focus:ring-copper"
             >
               Cancel
             </button>
@@ -115,7 +115,7 @@ export function CookiePreferencesModal({
           <button
             type="button"
             onClick={() => onSave(draft)}
-            className="min-h-[44px] rounded-[4px] bg-indigo-accent px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-accent/90 focus:outline-none focus:ring-2 focus:ring-indigo-accent focus:ring-offset-2"
+            className="min-h-[44px] rounded-[4px] bg-copper px-5 py-2.5 text-sm font-semibold text-white hover:bg-copper/90 focus:outline-none focus:ring-2 focus:ring-copper focus:ring-offset-2"
           >
             Save Preferences
           </button>

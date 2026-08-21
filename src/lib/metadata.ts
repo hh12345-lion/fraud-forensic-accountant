@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "./site";
+import { SITE_LOCALE } from "./region";
 
 const DEFAULT_OG_IMAGE = `${SITE_URL}/opengraph-image`;
 
@@ -25,7 +26,7 @@ export function buildMetadata({
     alternates: {
       canonical: url,
       languages: {
-        en: url,
+        [SITE_LOCALE]: url,
         "x-default": url,
       },
     },
@@ -34,7 +35,7 @@ export function buildMetadata({
       description,
       url,
       siteName: "FraudForensicAccountant.com",
-      locale: "en",
+      locale: SITE_LOCALE.replace("-", "_"),
       type: "website",
       images: [
         {

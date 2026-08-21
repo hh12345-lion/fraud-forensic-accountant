@@ -60,7 +60,7 @@ export const glossaryTerms: (FaqItem & { slug?: string })[] = [
     slug: "/fraud-types/crypto-fraud-digital-assets",
   },
   {
-    question: "DAML (Defence Against Money Laundering)",
+    question: "DAML (Defense Against Money Laundering)",
     answer:
       "Consent application to the NCA when a regulated firm suspects funds in its possession are criminal proceeds.",
   },
@@ -84,7 +84,7 @@ export const glossaryTerms: (FaqItem & { slug?: string })[] = [
   {
     question: "Failure to Prevent Fraud (FTPF)",
     answer:
-      "Offence making large organisations criminally liable for employee fraud committed for organisational benefit, in force from 1 September 2025.",
+      "Offence making large organizations criminally liable for employee fraud committed for organizational benefit, in force from 1 September 2025.",
     slug: "/case-types/sfo-fraud-investigation",
   },
   {
@@ -125,7 +125,7 @@ export const glossaryTerms: (FaqItem & { slug?: string })[] = [
     question: "Legal Professional Privilege (LPP)",
     answer:
       "Protection for confidential legal advice and litigation documents. Essential for internal investigations conducted via external counsel.",
-    slug: "/who-we-help/corporates-compliance",
+    slug: "/who-we-help/corporations-compliance",
   },
   {
     question: "Money Laundering (POCA ss327-329)",
@@ -181,7 +181,7 @@ export const glossaryTerms: (FaqItem & { slug?: string })[] = [
   {
     question: "Unexplained Wealth Order (UWO)",
     answer:
-      "High Court order requiring explanation of property worth over £50,000 where legitimate income is suspected insufficient.",
+      "High Court order requiring explanation of property worth over $50,000 where legitimate income is suspected insufficient.",
     slug: "/case-types/unexplained-wealth-orders",
   },
   {
@@ -192,7 +192,7 @@ export const glossaryTerms: (FaqItem & { slug?: string })[] = [
   {
     question: "Whistleblower Incentive (HMRC Reward Scheme)",
     answer:
-      "HMRC Strengthened Reward Scheme offering informants 15-30% of tax recovered over £1.5 million in serious cases.",
+      "HMRC Strengthened Reward Scheme offering informants 15-30% of tax recovered over $1.5 million in serious cases.",
   },
   {
     question: "Without Notice Application",

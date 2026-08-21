@@ -52,7 +52,7 @@ export const fraudTypes: ContentPage[] = [
       {
         question: "What role does the FCA play in investment fraud investigations?",
         answer:
-          "The FCA actively investigates and takes enforcement action on investment fraud, including fines for unauthorised financial promotions and insider dealing prosecutions. Forensic accountants assist FCA investigations by analysing financial records and producing expert evidence on the financial flows of the fraudulent scheme.",
+          "The FCA actively investigates and takes enforcement action on investment fraud, including fines for unauthorised financial promotions and insider dealing prosecutions. Forensic accountants assist FCA investigations by analyzing financial records and producing expert evidence on the financial flows of the fraudulent scheme.",
       },
     ],
     relatedCaseTypes: [
@@ -70,7 +70,7 @@ export const fraudTypes: ContentPage[] = [
     h1: "Bribery & Corruption Forensic Accountant | Bribery Act & SFO Investigations",
     paragraphs: [
       "Bribery and corruption investigations under the Bribery Act 2010 require forensic accountants to trace corrupt payments, quantify business benefit received, and support both criminal prosecution and DPA negotiations. Sections 1, 2, 6, and 7 (corporate failure to prevent bribery) create distinct forensic accounting challenges.",
-      "The SFO has pursued corporates through DPAs and, in notable cases, jury trial on failure to prevent bribery charges. Forensic accountants establish what was paid, to whom, through what channels, and what benefit the payer obtained.",
+      "The SFO has pursued corporations through DPAs and, in notable cases, jury trial on failure to prevent bribery charges. Forensic accountants establish what was paid, to whom, through what channels, and what benefit the payer obtained.",
       "International corruption cases add cross-border payment tracing, foreign subsidiary analysis, and multi-jurisdiction disclosure. Financial analysis is central to disgorgement figures in DPA negotiations.",
     ],
     faqs: [
@@ -100,24 +100,24 @@ export const fraudTypes: ContentPage[] = [
     h1: "Money Laundering & AML Forensic Accountant",
     paragraphs: [
       "Money laundering forensic accounting reconstructs the placement-layering-integration chain: how criminally obtained funds entered the financial system, were moved through complex transactions to obscure origin, and were integrated into the legitimate economy.",
-      "POCA money laundering offences (sections 327-329) require analysis of knowledge, suspicion, and fund provenance. Forensic accountants trace laundered proceeds and produce evidence for both prosecution and defence.",
-      "AML regulatory investigations by the FCA increasingly target legal, accountancy, and trust service providers. Forensic accountants analyse suspicious transaction patterns, assess control adequacy, and produce independent reports.",
+      "POCA money laundering offences (sections 327-329) require analysis of knowledge, suspicion, and fund provenance. Forensic accountants trace laundered proceeds and produce evidence for both prosecution and defense.",
+      "AML regulatory investigations by the FCA increasingly target legal, accountancy, and trust service providers. Forensic accountants analyze suspicious transaction patterns, assess control adequacy, and produce independent reports.",
     ],
     faqs: [
       {
-        question: "How does a forensic accountant analyse money laundering?",
+        question: "How does a forensic accountant analyze money laundering?",
         answer:
           "Money laundering forensic analysis involves reconstructing the placement-layering-integration chain: tracing how criminally obtained funds entered the financial system (placement), were moved through complex transactions to obscure origin (layering), and were finally integrated into the legitimate economy (integration). Transaction mapping and fund flow analysis are the core forensic tools.",
       },
       {
         question: "What is the role of a forensic accountant in AML regulatory investigations?",
         answer:
-          "The FCA is consolidating AML/CTF supervision of legal, accountancy, and trust and company service providers, with powers to register firms, conduct gatekeeping checks, impose civil penalties, and initiate criminal proceedings. Forensic accountants assist regulated firms facing FCA AML investigations by analysing suspicious transaction patterns, assessing the adequacy of controls, and producing independent reports for the regulator.",
+          "The FCA is consolidating AML/CTF supervision of legal, accountancy, and trust and company service providers, with powers to register firms, conduct gatekeeping checks, impose civil penalties, and initiate criminal proceedings. Forensic accountants assist regulated firms facing FCA AML investigations by analyzing suspicious transaction patterns, assessing the adequacy of controls, and producing independent reports for the regulator.",
       },
     ],
     relatedCaseTypes: [
       { slug: "money-laundering-proceedings", label: "Money Laundering Proceedings" },
-      { slug: "poca-confiscation-defence", label: "POCA Confiscation" },
+      { slug: "poca-confiscation-defense", label: "POCA Confiscation" },
     ],
     relatedServices: ["asset-tracing-recovery", "poca-confiscation-analysis"],
   },
@@ -159,9 +159,9 @@ export const fraudTypes: ContentPage[] = [
       "Tax fraud forensic accountant: COP8 and COP9 investigations, tax evasion analysis, and HMRC Strengthened Reward Scheme whistleblower cases.",
     h1: "Tax Fraud & HMRC Investigation Forensic Accountant",
     paragraphs: [
-      "HMRC fraud investigations range from COP8 civil fraud procedures to COP9 criminal investigations in the most serious cases. Forensic accountants reconstruct financial records, quantify the tax position, and support both taxpayer disclosure and defence.",
+      "HMRC fraud investigations range from COP8 civil fraud procedures to COP9 criminal investigations in the most serious cases. Forensic accountants reconstruct financial records, quantify the tax position, and support both taxpayer disclosure and defense.",
       "COP8 offers opportunity for full disclosure and payment of tax, interest, and penalties where HMRC suspects fraud. COP9 signals potential criminal prosecution. The distinction determines forensic approach and urgency.",
-      "HMRC's Strengthened Reward Scheme offers informants 15-30% of tax recovered over £1.5 million in serious cases, increasing whistleblower-triggered investigations. Corporates benefit from independent forensic analysis before HMRC contact.",
+      "HMRC's Strengthened Reward Scheme offers informants 15-30% of tax recovered over $1.5 million in serious cases, increasing whistleblower-triggered investigations. Corporations benefit from independent forensic analysis before HMRC contact.",
     ],
     faqs: [
       {
@@ -172,7 +172,7 @@ export const fraudTypes: ContentPage[] = [
       {
         question: "How does the HMRC whistleblower reward scheme work?",
         answer:
-          "HMRC's Strengthened Reward Scheme offers informants 15-30% of tax recovered over £1.5 million in serious tax cases, representing a significant shift from a traditionally limited approach to whistleblower rewards. Forensic accountants assist corporates facing whistleblower-triggered investigations by conducting independent financial analysis before HMRC contacts them.",
+          "HMRC's Strengthened Reward Scheme offers informants 15-30% of tax recovered over $1.5 million in serious tax cases, representing a significant shift from a traditionally limited approach to whistleblower rewards. Forensic accountants assist corporations facing whistleblower-triggered investigations by conducting independent financial analysis before HMRC contacts them.",
       },
     ],
     relatedCaseTypes: [
@@ -188,20 +188,20 @@ export const fraudTypes: ContentPage[] = [
       "Procurement fraud forensic accountant: contract steering, fictitious suppliers, kickback schemes, and loss quantification in public and commercial sectors.",
     h1: "Procurement Fraud Forensic Accountant | Public Sector & Commercial",
     paragraphs: [
-      "Procurement fraud includes contract steering, fictitious suppliers, kickback schemes, and split orders designed to avoid tender thresholds. Forensic accountants analyse procurement records against contract awards, identify suspicious patterns, and trace kickback payment flows.",
-      "Public sector procurement fraud causes significant taxpayer loss; commercial organisations face equivalent risks in supplier relationships and tender processes. Loss quantification covers overpricing, fictitious services, and diverted contract value.",
-      "Civil fraud claims (freezing injunctions, asset tracing, conspiracy) can run alongside or instead of criminal prosecution. Forensic accountants quantify fraud proceeds and total organisational loss for both routes.",
+      "Procurement fraud includes contract steering, fictitious suppliers, kickback schemes, and split orders designed to avoid tender thresholds. Forensic accountants analyze procurement records against contract awards, identify suspicious patterns, and trace kickback payment flows.",
+      "Public sector procurement fraud causes significant taxpayer loss; commercial organizations face equivalent risks in supplier relationships and tender processes. Loss quantification covers overpricing, fictitious services, and diverted contract value.",
+      "Civil fraud claims (freezing injunctions, asset tracing, conspiracy) can run alongside or instead of criminal prosecution. Forensic accountants quantify fraud proceeds and total organizational loss for both routes.",
     ],
     faqs: [
       {
         question: "What forensic accounting evidence is needed in procurement fraud cases?",
         answer:
-          "Procurement fraud investigation involves: analysing procurement records against contract awards; identifying patterns suggesting steering (single-source awards, unusual pricing, split orders); tracing payments to identify kickback flows; and quantifying the total loss to the organisation from overpricing or fictitious services. Forensic accountants produce evidence-quality findings for civil or criminal proceedings.",
+          "Procurement fraud investigation involves: analyzing procurement records against contract awards; identifying patterns suggesting steering (single-source awards, unusual pricing, split orders); tracing payments to identify kickback flows; and quantifying the total loss to the organization from overpricing or fictitious services. Forensic accountants produce evidence-quality findings for civil or criminal proceedings.",
       },
       {
         question: "Can procurement fraud be pursued civilly as well as criminally?",
         answer:
-          "Yes. Civil fraud claims (freezing injunctions, asset tracing, conspiracy claims) run alongside or instead of criminal prosecution for procurement fraud. Civil proceedings focus on recovery of the stolen funds and compensation for the organisation's loss. Forensic accountants quantify both the fraud proceeds and the total loss.",
+          "Yes. Civil fraud claims (freezing injunctions, asset tracing, conspiracy claims) run alongside or instead of criminal prosecution for procurement fraud. Civil proceedings focus on recovery of the stolen funds and compensation for the organization's loss. Forensic accountants quantify both the fraud proceeds and the total loss.",
       },
     ],
     relatedCaseTypes: [
@@ -218,7 +218,7 @@ export const fraudTypes: ContentPage[] = [
       "Financial statement fraud forensic accountant: revenue recognition fraud, false accounting, Fraud Act s4, and SFO enforcement support.",
     h1: "Financial Statement Fraud Forensic Accountant",
     paragraphs: [
-      "Financial statement fraud involves intentional manipulation of accounts: inflated revenue, understated liabilities, concealed losses, and improper period-end entries. Forensic accountants analyse journal entries, compare published accounts to underlying records, and quantify misstatement impact.",
+      "Financial statement fraud involves intentional manipulation of accounts: inflated revenue, understated liabilities, concealed losses, and improper period-end entries. Forensic accountants analyze journal entries, compare published accounts to underlying records, and quantify misstatement impact.",
       "False accounting under the Theft Act section 17 and Fraud Act 2006 section 4 (abuse of position) provide criminal routes. FCA and SFO enforcement against directors and companies for financial misstatement has intensified under the reinvigorated SFO approach.",
       "Under Nick Ephgrave's leadership, the SFO opened 8 new investigations in 2025 with 5 cases listed for trial in 2026. Forensic accountants provide independent analysis supporting or challenging prosecution financial reconstructions.",
     ],
@@ -226,12 +226,12 @@ export const fraudTypes: ContentPage[] = [
       {
         question: "How does a forensic accountant investigate financial statement fraud?",
         answer:
-          "Financial statement fraud investigation involves: analysing accounting records for indicators of manipulation (journal entry analysis, variance analysis, unusual period-end entries); comparing published accounts against underlying records; identifying specific misstatements (inflated revenue, understated liabilities, concealed losses); and quantifying the impact of each misstatement on the reported financial position.",
+          "Financial statement fraud investigation involves: analyzing accounting records for indicators of manipulation (journal entry analysis, variance analysis, unusual period-end entries); comparing published accounts against underlying records; identifying specific misstatements (inflated revenue, understated liabilities, concealed losses); and quantifying the impact of each misstatement on the reported financial position.",
       },
       {
         question: "What is the forensic accountant's role in SFO financial statement fraud investigations?",
         answer:
-          "Under the reinvigorated SFO approach, forensic accountants play a central role in providing independent financial analysis that supports or challenges the prosecution's reconstruction of the financial misstatements. They may be instructed by defence teams, by the SFO itself, or jointly in complex cases.",
+          "Under the reinvigorated SFO approach, forensic accountants play a central role in providing independent financial analysis that supports or challenges the prosecution's reconstruction of the financial misstatements. They may be engageed by defense teams, by the SFO itself, or jointly in complex cases.",
       },
     ],
     relatedCaseTypes: [

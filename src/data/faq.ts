@@ -9,7 +9,7 @@ export const siteFaqs: FaqItem[] = [
   {
     question: "What is the difference between civil fraud and criminal fraud?",
     answer:
-      "Civil fraud is brought by victims on the balance of probabilities, seeking freezing orders, asset tracing, and damages in the High Court. Criminal fraud is prosecuted by the state beyond reasonable doubt, seeking imprisonment and POCA confiscation in the Crown Court. Both can run simultaneously; forensic accountants must understand CPR Part 35 (civil) and CrPR Part 33 (criminal) expert frameworks.",
+      "Civil fraud is brought by victims on the balance of probabilities, seeking freezing orders, asset tracing, and damages in the High Court. Criminal fraud is prosecuted by the state beyond reasonable doubt, seeking imprisonment and POCA confiscation in the trial court. Both can run simultaneously; forensic accountants must understand CPR Part 35 (civil) and CrPR Part 33 (criminal) expert frameworks.",
   },
   {
     question: "What is POCA and how does it affect fraud proceedings?",
@@ -19,7 +19,7 @@ export const siteFaqs: FaqItem[] = [
   {
     question: "What is an unexplained wealth order?",
     answer:
-      "A UWO is a High Court order requiring a respondent to explain how they obtained specified property worth more than £50,000 where the SFO, NCA, HMRC, CPS, or FCA has reasonable grounds to suspect insufficient legitimate income. Failure to respond adequately creates a rebuttable presumption that property is recoverable under POCA.",
+      "A UWO is a High Court order requiring a respondent to explain how they obtained specified property worth more than $50,000 where the SFO, NCA, HMRC, CPS, or FCA has reasonable grounds to suspect insufficient legitimate income. Failure to respond adequately creates a rebuttable presumption that property is recoverable under POCA.",
   },
   {
     question: "What is a deferred prosecution agreement (DPA)?",
@@ -29,7 +29,7 @@ export const siteFaqs: FaqItem[] = [
   {
     question: "What is the Failure to Prevent Fraud offence?",
     answer:
-      "The FTPF offence under ECCTA 2023 makes large organisations criminally liable if they fail to prevent employees committing fraud for the organisation's benefit. It came into force on 1 September 2025. Organisations can rely on reasonable fraud prevention procedures. Forensic accountants assess procedure adequacy and support both compliance and defence.",
+      "The FTPF offence under ECCTA 2023 makes large organizations criminally liable if they fail to prevent employees committing fraud for the organization's benefit. It came into force on 1 September 2025. Organizations can rely on reasonable fraud prevention procedures. Forensic accountants assess procedure adequacy and support both compliance and defense.",
   },
   {
     question: "How does a forensic accountant trace cryptocurrency?",
@@ -44,7 +44,7 @@ export const siteFaqs: FaqItem[] = [
   {
     question: "Should I call the SFO or conduct an internal investigation first?",
     answer:
-      "Corporates should typically conduct an internal investigation via external legal counsel (protected by legal professional privilege) before deciding whether to self-report. Forensic accountants quantify the scope of wrongdoing so the board can make an informed decision. Self-reporting now explicitly leads to DPA invitation under 2025 guidance, but does not guarantee immunity from prosecution.",
+      "Corporations should typically conduct an internal investigation via external legal counsel (protected by legal professional privilege) before deciding whether to self-report. Forensic accountants quantify the scope of wrongdoing so the board can make an informed decision. Self-reporting now explicitly leads to DPA invitation under 2025 guidance, but does not guarantee immunity from prosecution.",
   },
   {
     question: "What credentials should a fraud forensic accountant hold?",
@@ -54,11 +54,11 @@ export const siteFaqs: FaqItem[] = [
   {
     question: "How much does a fraud forensic accountant cost?",
     answer:
-      "Investigation fees typically range from £150-£350/hour regionally to £300-£600/hour for senior London specialists. Expert witness reports range from £5,000-£20,000 for standard civil fraud matters to £20,000-£75,000+ for complex POCA or SFO cases. DPA financial quantification may cost £30,000-£200,000+. Emergency freezing injunction support is available at premium rates.",
+      "Investigation fees typically range from $150-$350/hour regionally to $300-$600/hour for senior London specialists. Expert witness reports range from $5,000-$20,000 for standard civil fraud matters to $20,000-$75,000+ for complex POCA or SFO cases. DPA financial quantification may cost $30,000-$200,000+. Emergency freezing injunction support is available at premium rates.",
   },
   {
     question: "What is legal professional privilege in fraud investigations?",
     answer:
-      "Legal professional privilege protects confidential communications between a client and their lawyer, and documents created for the purpose of obtaining legal advice or litigation. Internal investigations conducted via external counsel with forensic accountants instructed by lawyers can protect investigation reports from automatic disclosure to regulators, allowing informed self-reporting decisions.",
+      "Legal professional privilege protects confidential communications between a client and their lawyer, and documents created for the purpose of obtaining legal advice or litigation. Internal investigations conducted via external counsel with forensic accountants engageed by lawyers can protect investigation reports from automatic disclosure to regulators, allowing informed self-reporting decisions.",
   },
 ];
