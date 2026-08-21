@@ -5,15 +5,13 @@ Lead-generation website for [fraudforensicaccountant.com](https://www.fraudforen
 ## Stack
 
 - Next.js 16 (App Router), TypeScript, Tailwind CSS v4
-- Static generation (no custom backend)
-- Formspree contact form
+- Contact form → Google Sheets via `/api/submit-lead`
 
 ## Setup
 
 ```bash
 npm install
-cp .env.example .env.local
-# Copy .env.example to .env.local and set Google Sheets + webhook vars
+# Set Google Sheets env vars in .env.local (see docs/COOKIES-AND-LEADS.md)
 npm run dev
 ```
 
@@ -37,4 +35,4 @@ See [docs/SEO-GENERATION.md](docs/SEO-GENERATION.md) for how URL inventory, gene
 
 ## Environment
 
-See `.env.example` for required variables.
+See [docs/COOKIES-AND-LEADS.md](docs/COOKIES-AND-LEADS.md) for Google Sheets configuration.

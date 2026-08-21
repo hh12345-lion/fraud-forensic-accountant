@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { appendRow } from "@/lib/google-sheets";
-import {
-  leadToSheetRow,
-  notifyLeadWebhook,
-  sanitizeLeadText,
-  type LeadSubmission,
-} from "@/lib/leads";
+import { leadToSheetRow, sanitizeLeadText, type LeadSubmission } from "@/lib/leads";
 import { SITE_EMAIL } from "@/lib/site";
 
 export async function POST(request: NextRequest) {
@@ -43,27 +38,10 @@ export async function POST(request: NextRequest) {
       message,
     };
 
-    let sheetsOk = false;
-    const hasWebhook = Boolean(
-      process.env.Lead_notification_url || process.env.LEAD_NOTIFICATION_URL
-    );
-
     try {
       await appendRow(leadToSheetRow(lead));
-      sheetsOk = true;
     } catch (err) {
       console.error("Google Sheets write failed:", err);
-    }
-
-    if (hasWebhook) {
-      try {
-        await notifyLeadWebhook(lead);
-      } catch (err) {
-        console.error("Lead webhook failed:", err);
-      }
-    }
-
-    if (!sheetsOk && !hasWebhook) {
       return NextResponse.json(
         {
           success: false,

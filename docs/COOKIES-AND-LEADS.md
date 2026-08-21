@@ -32,27 +32,18 @@ Policy: `/cookies`
 
 1. User submits `/contact` form
 2. Browser `POST /api/submit-lead` (JSON)
-3. Server appends a row to Google Sheets (if configured)
-4. Server `POST`s to `Lead_notification_url` webhook with:
-
-| Key | Value |
-|-----|--------|
-| Full Name | `fullName` |
-| Email | `email` |
-| Phone Number | `phone` |
-| Brand name | `Fraud Forensic Accountant` |
+3. Server appends a row to Google Sheets
 
 ### Environment variables (server-side)
 
 ```
-Lead_notification_url=
 GOOGLE_SERVICE_ACCOUNT_EMAIL=
 GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
 GOOGLE_SHEET_ID=
 GOOGLE_SHEET_TAB_NAME=Sheet16
 ```
 
-Copy `.env.example` to `.env.local` (local) or set in Netlify/Vercel dashboard.
+Set in Netlify/Vercel dashboard or `.env.local` for local development.
 
 **Never commit real keys to Git.**
 
@@ -62,11 +53,6 @@ Copy `.env.example` to `.env.local` (local) or set in Netlify/Vercel dashboard.
 
 Share the spreadsheet with the service account email as **Editor**.
 
-### Netlify
-
-- `netlify/functions/submit-lead.js` — webhook-only fallback
-- With `@netlify/plugin-nextjs`, use the Next.js API route for Sheets + webhook
-
 ### Company email
 
-Displayed on the contact form and used in sheet column: `info@fraudforensicaccountant.com`
+Displayed on the contact form and used in sheet column: `contact@fraudforensicaccountant.com`

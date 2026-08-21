@@ -511,7 +511,7 @@ fraudforensicaccountant.com has the **strongest timing advantage** in the portfo
 | Variable | Purpose |
 |----------|---------|
 | `NEXT_PUBLIC_SITE_URL` | `https://www.fraudforensicaccountant.com` |
-| `NEXT_PUBLIC_FORMSPREE_FORM_ID` | Contact form |
+| `GOOGLE_SHEET_ID` | Contact form lead capture |
 | `GOOGLE_SITE_VERIFICATION` | Search Console |
 | `BING_SITE_VERIFICATION` | Bing Webmaster |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Analytics |
@@ -532,7 +532,7 @@ fraudforensicaccountant.com has the **strongest timing advantage** in the portfo
 
 - [ ] Request indexing for `/`, `/fraud-forensic-accounting-explained`, `/services`, three `/who-we-help` pages
 - [ ] Rich Results Test on homepage, `/faq`, one `/case-types` and one `/fraud-types` page
-- [ ] GA4 conversion event on Formspree success (`/thank-you`)
+- [ ] GA4 conversion event on contact form success (`/thank-you`)
 
 ---
 
@@ -660,7 +660,7 @@ fraudforensicaccountant.com has the **strongest timing advantage** in the portfo
 | Non-branded impressions | Growth week-on-week for Tier 1 keywords | Search Console |
 | Average position | Top 20 → Top 10 for “fraud forensic accountant UK” | Search Console |
 | Organic clicks to `/contact` | ≥5% of organic sessions | GA4 |
-| Form submissions | Baseline then +20% MoM | Formspree + GA4 event |
+| Form submissions | Baseline then +20% MoM | Contact form + GA4 event |
 | Indexed pages | 45+ indexable URLs indexed | Search Console |
 
 ### Secondary KPIs
