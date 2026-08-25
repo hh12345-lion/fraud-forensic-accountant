@@ -1,19 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
-import { appendRow } from "@/lib/google-sheets";
-import { leadToSheetRow, sanitizeLeadText, type LeadSubmission } from "@/lib/leads";
-import { SITE_EMAIL } from "@/lib/site";
+import { notifyLeadWebhook } from "@/lib/leadNotification";
+import { sanitizeLeadText } from "@/lib/leads";
 
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as Partial<LeadSubmission>;
+    const body = (await request.json()) as {
+      fullName?: string;
+      email?: string;
+      phone?: string;
+      formType?: string;
+      message?: string;
+    };
 
     const fullName = sanitizeLeadText(body.fullName ?? "", 200);
     const email = sanitizeLeadText(body.email ?? "", 320).toLowerCase();
+    const phone = sanitizeLeadText(body.phone ?? "", 50);
     const message = sanitizeLeadText(body.message ?? "", 4000);
 
-    if (!fullName || !email || !message) {
+    if (!fullName || !email) {
       return NextResponse.json(
-        { success: false, error: "Name, email, and message are required" },
+        { success: false, error: "fullName and email are required" },
         { status: 400 }
       );
     }
@@ -25,33 +31,27 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const lead: LeadSubmission = {
-      fullName,
-      email,
-      phone: sanitizeLeadText(body.phone ?? "", 50),
-      organization: sanitizeLeadText(body.organization ?? "", 200),
-      role: sanitizeLeadText(body.role ?? "", 120),
-      caseCategory: sanitizeLeadText(body.caseCategory ?? "", 120),
-      fraudType: sanitizeLeadText(body.fraudType ?? "", 120),
-      fraudValue: sanitizeLeadText(body.fraudValue ?? "", 80),
-      urgent: sanitizeLeadText(body.urgent ?? "", 80),
-      message,
-    };
-
-    try {
-      await appendRow(leadToSheetRow(lead));
-    } catch (err) {
-      console.error("Google Sheets write failed:", err);
+    if (body.formType === "contact" && !message) {
       return NextResponse.json(
-        {
-          success: false,
-          error: `Unable to save submission. Please email ${SITE_EMAIL}`,
-        },
-        { status: 500 }
+        { success: false, error: "message is required" },
+        { status: 400 }
       );
     }
 
-    return NextResponse.json({ success: true });
+    const result = await notifyLeadWebhook({ fullName, email, phone });
+
+    if (message) {
+      console.log("Contact message:", { fullName, email, formType: body.formType, message });
+    }
+
+    if (!result.ok) {
+      return NextResponse.json(
+        { success: false, error: "Lead notification dispatch failed" },
+        { status: 502 }
+      );
+    }
+
+    return NextResponse.json({ success: true, forwarded: result.forwarded });
   } catch (error) {
     console.error("submit-lead error:", error);
     return NextResponse.json(

@@ -23,6 +23,8 @@ export function ContactForm() {
     const payload = {
       fullName: String(data.get("name") ?? "").trim(),
       email: String(data.get("email") ?? "").trim(),
+      phone: "",
+      formType: "contact",
       message: String(data.get("message") ?? "").trim(),
     };
 

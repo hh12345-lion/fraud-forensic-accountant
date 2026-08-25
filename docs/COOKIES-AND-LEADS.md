@@ -28,31 +28,30 @@ Policy: `/cookies`
 
 ## Contact form & leads
 
+See **`Lead_notification_setup.md`** for the full cross-project spec.
+
 ### Flow
 
 1. User submits `/contact` form
-2. Browser `POST /api/submit-lead` (JSON)
-3. Server appends a row to Google Sheets
+2. Browser `POST /api/submit-lead` with `fullName`, `email`, `phone`, `formType: "contact"`, and `message`
+3. Server `POST`s to **`Lead_notification_url`** (n8n) with five fixed keys: `Full Name`, `Email`, `Phone Number`, `Brand name`, `domain`
 
-### Environment variables (server-side)
+### Environment variables
 
 ```
-GOOGLE_SERVICE_ACCOUNT_EMAIL=
-GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
-GOOGLE_SHEET_ID=
-GOOGLE_SHEET_TAB_NAME=Sheet16
+Lead_notification_url=
+NEXT_PUBLIC_SITE_URL=https://www.fraudforensicaccountant.com
 ```
 
-Set in Netlify/Vercel dashboard or `.env.local` for local development.
+Optional Google Sheets vars apply to **instruct** submissions only (when `/api/instruct` exists), not the contact form.
 
-**Never commit real keys to Git.**
+**Never commit real URLs or keys to Git.**
 
-### Google Sheet headers (row 1)
+### Netlify
 
-`Timestamp | Brand | Full Name | Email | Phone | Organisation | Role | Case Category | Fraud Type | Fraud Value | Urgent | Message | Company Email`
-
-Share the spreadsheet with the service account email as **Editor**.
+- **`netlify.toml`**: `/api/submit-lead` → `/.netlify/functions/submit-lead`
+- Local testing: `netlify dev` (often `http://localhost:8888`)
 
 ### Company email
 
-Displayed on the contact form and used in sheet column: `contact@fraudforensicaccountant.com`
+Displayed on the contact form: `contact@fraudforensicaccountant.com`

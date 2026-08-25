@@ -2,138 +2,117 @@ import Link from "next/link";
 import { CookieSettingsButton } from "@/components/cookies/CookieSettingsButton";
 import { SITE_EMAIL } from "@/lib/site";
 import { SITE_JURISDICTION_NOTE, SITE_REGION_LABEL } from "@/lib/region";
-import { serviceNavLinks, fraudTypeNavLinks } from "@/data/navigation";
+import { serviceNavLinks, fraudTypeNavLinks, resourcesNavLinks } from "@/data/navigation";
 
-const practiceLinks = serviceNavLinks.slice(0, 5);
-const insightLinks = [
-  { href: "/guides", label: "Guides" },
-  { href: "/how-to-instruct", label: "How to Engage" },
-  { href: "/qualifications", label: "Qualifications" },
-  { href: "/glossary", label: "Glossary" },
-  { href: "/fraud-forensic-accounting-explained", label: "Forensic Accounting Overview" },
-];
-const clientLinks = [
-  { href: "/who-we-help/criminal-defence-solicitors", label: "Criminal Defense Attorneys" },
-  { href: "/who-we-help/civil-fraud-solicitors", label: "Civil Fraud Attorneys" },
-  { href: "/who-we-help/corporations-compliance", label: "Corporations & Compliance" },
-  { href: "/experts", label: "Expert Directory" },
-  { href: "/contact", label: "Contact" },
+const registrySections = [
+  {
+    numeral: "I",
+    title: "Services",
+    links: [
+      ...serviceNavLinks.slice(0, 4),
+      { href: "/services", label: "All services" },
+    ],
+  },
+  {
+    numeral: "II",
+    title: "Fraud Types",
+    links: [
+      ...fraudTypeNavLinks.slice(0, 4),
+      { href: "/fraud-types", label: "All fraud types" },
+    ],
+  },
+  {
+    numeral: "III",
+    title: "Resources & Clients",
+    links: [
+      ...resourcesNavLinks,
+      { href: "/who-we-help", label: "Who we help" },
+      { href: "/experts", label: "Expert directory" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
 ];
 
 export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="mt-auto">
-      <div className="border-t-4 border-copper bg-navy text-white/80">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
-          <div className="lg:col-span-5">
-            <p className="font-display text-[0.65rem] font-semibold tracking-[0.2em] text-copper-light uppercase">
-              {SITE_REGION_LABEL}
+    <footer className="mt-auto border-t-[3px] border-copper bg-stone">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-6 border-b border-border pb-10 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-copper">
+              Site registry · {SITE_REGION_LABEL}
             </p>
-            <p className="mt-2 font-display text-2xl leading-tight text-white sm:text-3xl">
+            <p className="mt-2 font-display text-2xl font-semibold text-navy sm:text-3xl">
               Fraud Forensic Accountant
             </p>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-white/70">
-              FraudForensicAccountant.com connects law firms, corporations, and government agencies
-              with qualified fraud forensic accountants across civil, criminal, and regulatory
-              matters worldwide. We are not a law firm and do not provide legal advice.
-            </p>
+          </div>
+          <div className="flex flex-col gap-2 sm:items-end">
             <a
               href={`mailto:${SITE_EMAIL}`}
-              className="mt-4 inline-block text-sm font-medium text-copper-light hover:text-white"
+              className="text-sm font-medium text-navy hover:text-copper"
             >
               {SITE_EMAIL}
             </a>
-          </div>
-
-          <div className="grid gap-8 sm:grid-cols-3 lg:col-span-7">
-            <div>
-              <h3 className="mb-4 text-xs font-semibold tracking-[0.15em] text-copper-light uppercase">
-                Practice Areas
-              </h3>
-              <ul className="space-y-2.5 text-sm">
-                {practiceLinks.map((l) => (
-                  <li key={l.href}>
-                    <Link href={l.href} className="hover:text-white">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link href="/services" className="font-medium text-copper-light hover:text-white">
-                    All services →
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 text-xs font-semibold tracking-[0.15em] text-copper-light uppercase">
-                Fraud Categories
-              </h3>
-              <ul className="space-y-2.5 text-sm">
-                {fraudTypeNavLinks.slice(0, 5).map((l) => (
-                  <li key={l.href}>
-                    <Link href={l.href} className="hover:text-white">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link href="/fraud-types" className="font-medium text-copper-light hover:text-white">
-                    All fraud types →
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 text-xs font-semibold tracking-[0.15em] text-copper-light uppercase">
-                Clients & Insights
-              </h3>
-              <ul className="space-y-2.5 text-sm">
-                {clientLinks.map((l) => (
-                  <li key={l.href}>
-                    <Link href={l.href} className="hover:text-white">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Link
+              href="/contact"
+              className="text-sm font-medium text-copper underline-offset-2 hover:underline"
+            >
+              Submit an inquiry →
+            </Link>
           </div>
         </div>
 
-        <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-wrap gap-x-6 gap-y-2 px-4 py-4 sm:px-6 lg:px-8">
-            {insightLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="text-xs text-white/60 hover:text-white"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </div>
+        <div className="grid gap-10 pt-10 md:grid-cols-3">
+          {registrySections.map((section) => (
+            <div key={section.numeral}>
+              <h3 className="flex items-baseline gap-2 font-mono text-xs text-copper">
+                <span className="text-base font-normal">{section.numeral}.</span>
+                <span className="uppercase tracking-[0.12em]">{section.title}</span>
+              </h3>
+              <ul className="mt-4 space-y-2">
+                {section.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-body transition hover:text-copper"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
+
+        <p className="mt-10 max-w-3xl text-xs leading-relaxed text-muted">
+          FraudForensicAccountant.com connects law firms and corporations with qualified fraud
+          forensic accountants. We are not a law firm and do not provide legal advice.{" "}
+          {SITE_JURISDICTION_NOTE}
+        </p>
       </div>
 
-      <div className="border-t border-border bg-stone px-4 py-6 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-center text-xs text-muted sm:text-left">{SITE_JURISDICTION_NOTE}</p>
-          <p className="mt-3 text-center text-xs text-muted sm:text-left">
-            &copy; 2025 FraudForensicAccountant. {SITE_REGION_LABEL}.{" "}
-            <Link href="/privacy" className="underline hover:text-navy">
+      <div className="border-t border-border bg-white">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-4 text-center text-xs text-muted sm:flex-row sm:px-6 sm:text-left lg:px-8">
+          <p>
+            &copy; {year} FraudForensicAccountant · {SITE_REGION_LABEL}
+          </p>
+          <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:justify-end">
+            <Link href="/privacy" className="hover:text-navy">
               Privacy
             </Link>
-            {" · "}
-            <Link href="/cookies" className="underline hover:text-navy">
+            <span aria-hidden>·</span>
+            <Link href="/cookies" className="hover:text-navy">
               Cookies
             </Link>
-            {" · "}
-            <Link href="/terms" className="underline hover:text-navy">
+            <span aria-hidden>·</span>
+            <Link href="/terms" className="hover:text-navy">
               Terms
             </Link>
-            {" · "}
-            <CookieSettingsButton className="underline hover:text-navy" />
+            <span aria-hidden>·</span>
+            <CookieSettingsButton className="hover:text-navy" />
           </p>
         </div>
       </div>

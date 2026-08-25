@@ -35,4 +35,4 @@ See [docs/SEO-GENERATION.md](docs/SEO-GENERATION.md) for how URL inventory, gene
 
 ## Environment
 
-See [docs/COOKIES-AND-LEADS.md](docs/COOKIES-AND-LEADS.md) for Google Sheets configuration.
+See **`Lead_notification_setup.md`** and [docs/COOKIES-AND-LEADS.md](docs/COOKIES-AND-LEADS.md). Copy `.env.example` to `.env.local` and set `Lead_notification_url` + `NEXT_PUBLIC_SITE_URL`.
