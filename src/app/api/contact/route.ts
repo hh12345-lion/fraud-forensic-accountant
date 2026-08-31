@@ -7,7 +7,10 @@ import { sanitizeLeadText, type LeadSubmission } from "@/lib/leads";
 
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as Partial<LeadSubmission>;
+    const body = (await request.json()) as Partial<LeadSubmission> & {
+      skipSheet?: boolean;
+    };
+    const skipSheet = body.skipSheet === true;
 
     const fullName = sanitizeLeadText(body.fullName ?? "", 200);
     const email = sanitizeLeadText(body.email ?? "", 320).toLowerCase();
@@ -40,22 +43,24 @@ export async function POST(request: NextRequest) {
       message,
     };
 
-    // Soft-fail Sheets — never 500/502 because Sheets failed
-    await writeSubmissionToSheetSafely(
-      () => appendContactToSheet(lead),
-      "contact"
-    );
+    const writtenToSheet = skipSheet
+      ? false
+      : await writeSubmissionToSheetSafely(
+          () => appendContactToSheet(lead),
+          "contact"
+        );
 
-    // Soft-fail email: no Resend configured on this site; log for ops
     console.log("Contact submission received:", {
       fullName: lead.fullName,
       email: lead.email,
       formType: "Contact",
+      writtenToSheet,
     });
 
     return NextResponse.json({
       success: true,
       message: "Inquiry logged securely.",
+      writtenToSheet,
     });
   } catch (error) {
     console.error("contact error:", error);

@@ -12,9 +12,21 @@ export interface AppendResult {
   updatedRange?: string | null;
 }
 
+function normalizePrivateKey(raw: string | undefined): string | undefined {
+  if (!raw) return undefined;
+  let key = raw.trim();
+  if (
+    (key.startsWith('"') && key.endsWith('"')) ||
+    (key.startsWith("'") && key.endsWith("'"))
+  ) {
+    key = key.slice(1, -1);
+  }
+  return key.replace(/\\n/g, "\n");
+}
+
 function getAuthClient() {
   const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-  const key = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+  const key = normalizePrivateKey(process.env.GOOGLE_PRIVATE_KEY);
 
   if (!email || !key) {
     throw new Error("Google Sheets credentials are not configured");
@@ -44,7 +56,9 @@ export function isGoogleSheetsConfigured(): boolean {
 function resolveTarget(target?: SheetTarget) {
   const spreadsheetId = target?.spreadsheetId || process.env.GOOGLE_SHEET_ID;
   const sheetName =
-    target?.sheetName || process.env.GOOGLE_SHEET_TAB_NAME || "Sheet1";
+    target?.sheetName?.trim() ||
+    process.env.GOOGLE_SHEET_TAB_NAME?.trim() ||
+    "Sheet1";
 
   if (!spreadsheetId) {
     throw new Error("GOOGLE_SHEET_ID is not configured");

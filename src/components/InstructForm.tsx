@@ -7,6 +7,10 @@ import { FormEvent, useState } from "react";
 const inputClass =
   "w-full min-h-[44px] rounded-sm border border-border px-3 py-2 text-body focus:border-copper focus:outline-none focus:ring-2 focus:ring-copper/20";
 
+/**
+ * Webhook + Sheets via /api/submit-lead (primary).
+ * Optional /api/instruct is soft-awaited (404 on live Netlify historically).
+ */
 export function InstructForm() {
   const router = useRouter();
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
@@ -26,37 +30,38 @@ export function InstructForm() {
       phone: String(data.get("phone") ?? "").trim(),
       organization: String(data.get("organization") ?? "").trim(),
       message: String(data.get("message") ?? "").trim(),
+      formType: "instruct" as const,
     };
 
     try {
-      const res = await fetch("/api/instruct", {
+      const leadRes = await fetch("/api/submit-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      const result = (await res.json()) as { success?: boolean; error?: string };
+      const leadResult = (await leadRes.json().catch(() => ({}))) as {
+        success?: boolean;
+        error?: string;
+        writtenToSheet?: boolean;
+      };
 
-      if (!res.ok || !result.success) {
-        setStatus("error");
-        setErrorMessage(result.error ?? "Submission failed");
-        return;
+      try {
+        await fetch("/api/instruct", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...payload, skipSheet: true }),
+          keepalive: true,
+        });
+      } catch {
+        /* submit-lead already handled webhook + Sheets */
       }
 
-      void fetch("/api/submit-lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fullName: payload.fullName,
-          email: payload.email,
-          phone: payload.phone,
-          formType: "instruct",
-        }),
-      }).catch(() => {
-        console.warn(
-          "Lead webhook notification failed; instruction was still logged."
-        );
-      });
+      if (!leadRes.ok || !leadResult.success) {
+        setStatus("error");
+        setErrorMessage(leadResult.error ?? "Submission failed");
+        return;
+      }
 
       router.push("/thank-you");
     } catch {

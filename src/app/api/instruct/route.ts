@@ -7,7 +7,10 @@ import { sanitizeLeadText, type LeadSubmission } from "@/lib/leads";
 
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as Partial<LeadSubmission>;
+    const body = (await request.json()) as Partial<LeadSubmission> & {
+      skipSheet?: boolean;
+    };
+    const skipSheet = body.skipSheet === true;
 
     const fullName = sanitizeLeadText(body.fullName ?? "", 200);
     const email = sanitizeLeadText(body.email ?? "", 320).toLowerCase();
@@ -40,21 +43,24 @@ export async function POST(request: NextRequest) {
       message,
     };
 
-    // Soft-fail Sheets — never 500/502 because Sheets failed
-    await writeSubmissionToSheetSafely(
-      () => appendInstructToSheet(lead),
-      "instruct"
-    );
+    const writtenToSheet = skipSheet
+      ? false
+      : await writeSubmissionToSheetSafely(
+          () => appendInstructToSheet(lead),
+          "instruct"
+        );
 
     console.log("Instruct submission received:", {
       fullName: lead.fullName,
       email: lead.email,
       formType: "Instruct",
+      writtenToSheet,
     });
 
     return NextResponse.json({
       success: true,
       message: "Instruction received.",
+      writtenToSheet,
     });
   } catch (error) {
     console.error("instruct error:", error);

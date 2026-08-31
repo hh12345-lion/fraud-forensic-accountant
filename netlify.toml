@@ -5,10 +5,13 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[[redirects]]
-  from = "/api/submit-lead"
-  to = "/.netlify/functions/submit-lead"
-  status = 200
+# submit-lead handled by src/app/api/submit-lead/route.ts (webhook + soft-fail Sheets).
+# Force-redirect to the Netlify function skipped Sheets entirely; /api/contact
+# and /api/instruct are 404 on live Netlify Next runtime.
+# [[redirects]]
+#   from = "/api/submit-lead"
+#   to = "/.netlify/functions/submit-lead"
+#   status = 200
 
 [[headers]]
   for = "/sitemap.xml"
