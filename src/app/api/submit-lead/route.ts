@@ -9,13 +9,11 @@ export async function POST(request: NextRequest) {
       email?: string;
       phone?: string;
       formType?: string;
-      message?: string;
     };
 
     const fullName = sanitizeLeadText(body.fullName ?? "", 200);
     const email = sanitizeLeadText(body.email ?? "", 320).toLowerCase();
     const phone = sanitizeLeadText(body.phone ?? "", 50);
-    const message = sanitizeLeadText(body.message ?? "", 4000);
 
     if (!fullName || !email) {
       return NextResponse.json(
@@ -31,18 +29,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (body.formType === "contact" && !message) {
-      return NextResponse.json(
-        { success: false, error: "message is required" },
-        { status: 400 }
-      );
-    }
-
+    // Webhook is the primary lead path. Sheets are written by /api/contact and
+    // /api/instruct (shared tab + Form Type) so we do not double-append here.
     const result = await notifyLeadWebhook({ fullName, email, phone });
-
-    if (message) {
-      console.log("Contact message:", { fullName, email, formType: body.formType, message });
-    }
 
     if (!result.ok) {
       return NextResponse.json(

@@ -5,7 +5,7 @@ Lead-generation website for [fraudforensicaccountant.com](https://www.fraudforen
 ## Stack
 
 - Next.js 16 (App Router), TypeScript, Tailwind CSS v4
-- Contact form → Google Sheets via `/api/submit-lead`
+- Contact / instruct forms → shared Google Sheet tab (`Form Type`) + n8n via `/api/submit-lead`
 
 ## Setup
 

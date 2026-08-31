@@ -2,6 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/PageHero";
 import { ContentSection } from "@/components/ContentSection";
 import { BottomCTA } from "@/components/BottomCTA";
+import { InstructForm } from "@/components/InstructForm";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbJsonLd } from "@/lib/schema";
 
@@ -61,6 +62,15 @@ export default function HowToEngagePage() {
           <li>Document production and investigation commencement</li>
           <li>Interim findings and final report delivery</li>
         </ol>
+
+        <h2>Submit an instruction</h2>
+        <p>
+          Use the form below to send a confidential engagement brief. We respond within one
+          business day (sooner for urgent freezing injunction or SFO Section 2 matters).
+        </p>
+        <div className="mt-6 max-w-lg">
+          <InstructForm />
+        </div>
 
         <h2>Red Flags: When Not to Delay Engageion</h2>
         <ul>
