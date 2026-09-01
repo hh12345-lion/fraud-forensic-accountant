@@ -12,7 +12,11 @@ import { SITE_EMAIL } from "@/lib/site";
 
 function sharedTab(): SheetTarget {
   return {
-    sheetName: (process.env.GOOGLE_SHEET_TAB_NAME || "Sheet1").trim(),
+    sheetName: (
+      process.env.GOOGLE_SHEET_TAB_NAME || "Fraud Forensic Accountant"
+    )
+      .replace(/\s+/g, " ")
+      .trim(),
   };
 }
 
@@ -80,7 +84,11 @@ export async function writeSubmissionToSheetSafely(
       spreadsheetId: process.env.GOOGLE_SHEET_ID
         ? `${process.env.GOOGLE_SHEET_ID.slice(0, 8)}...`
         : "missing",
-      tab: (process.env.GOOGLE_SHEET_TAB_NAME || "Sheet1").trim(),
+      tab: (
+        process.env.GOOGLE_SHEET_TAB_NAME || "Fraud Forensic Accountant"
+      )
+        .replace(/\s+/g, " ")
+        .trim(),
       timestamp: new Date().toISOString(),
     });
     return false;

@@ -12,20 +12,69 @@ export interface AppendResult {
   updatedRange?: string | null;
 }
 
-function normalizePrivateKey(raw: string | undefined): string | undefined {
-  if (!raw) return undefined;
-  let key = raw.trim();
+/** Default tab when GOOGLE_SHEET_TAB_NAME is unset (matches Netlify). */
+export const DEFAULT_SHEET_TAB_NAME = "Fraud Forensic Accountant";
+
+function trimEnvQuotes(value: string | undefined): string | undefined {
+  if (value == null) return undefined;
+  let v = value.trim();
   if (
-    (key.startsWith('"') && key.endsWith('"')) ||
-    (key.startsWith("'") && key.endsWith("'"))
+    (v.startsWith('"') && v.endsWith('"')) ||
+    (v.startsWith("'") && v.endsWith("'"))
   ) {
-    key = key.slice(1, -1);
+    v = v.slice(1, -1).trim();
   }
-  return key.replace(/\\n/g, "\n");
+  return v || undefined;
+}
+
+/** Accepts raw ID or a full `docs.google.com/spreadsheets/d/...` URL. */
+export function normalizeSpreadsheetId(
+  raw: string | undefined
+): string | undefined {
+  const trimmed = trimEnvQuotes(raw);
+  if (!trimmed) return undefined;
+  const fromUrl = trimmed.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+  if (fromUrl?.[1]) return fromUrl[1];
+  return trimmed;
+}
+
+function normalizePrivateKey(raw: string | undefined): string | undefined {
+  const trimmed = trimEnvQuotes(raw);
+  if (!trimmed) return undefined;
+
+  // Netlify: literal \n, double-escaped \\n, or real newlines.
+  let key = trimmed;
+  for (let i = 0; i < 3 && key.includes("\\n"); i += 1) {
+    key = key.replace(/\\n/g, "\n");
+  }
+  key = key.trim();
+
+  // PEM pasted as one line (common in hosting env UIs).
+  if (key.includes("BEGIN PRIVATE KEY") && !key.includes("\n")) {
+    key = key
+      .replace("-----BEGIN PRIVATE KEY-----", "-----BEGIN PRIVATE KEY-----\n")
+      .replace("-----END PRIVATE KEY-----", "\n-----END PRIVATE KEY-----");
+  }
+
+  return key.includes("BEGIN PRIVATE KEY") ? key : undefined;
+}
+
+function resolveSheetTabName(override?: string): string {
+  const raw =
+    trimEnvQuotes(override || process.env.GOOGLE_SHEET_TAB_NAME) ||
+    DEFAULT_SHEET_TAB_NAME;
+  return raw.replace(/\s+/g, " ").trim();
+}
+
+/** A1 range for append; quotes tab names with spaces/special chars. */
+function appendRangeForTab(sheetName: string): string {
+  const name = sheetName || DEFAULT_SHEET_TAB_NAME;
+  if (/^[A-Za-z0-9_]+$/.test(name)) return `${name}!A:A`;
+  return `'${name.replace(/'/g, "''")}'!A:A`;
 }
 
 function getAuthClient() {
-  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+  const email = trimEnvQuotes(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL);
   const key = normalizePrivateKey(process.env.GOOGLE_PRIVATE_KEY);
 
   if (!email || !key) {
@@ -47,18 +96,17 @@ function getSheetsClient(): sheets_v4.Sheets {
 
 export function isGoogleSheetsConfigured(): boolean {
   return Boolean(
-    process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL &&
-      process.env.GOOGLE_PRIVATE_KEY &&
-      process.env.GOOGLE_SHEET_ID
+    trimEnvQuotes(process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL) &&
+      normalizePrivateKey(process.env.GOOGLE_PRIVATE_KEY) &&
+      normalizeSpreadsheetId(process.env.GOOGLE_SHEET_ID)
   );
 }
 
 function resolveTarget(target?: SheetTarget) {
-  const spreadsheetId = target?.spreadsheetId || process.env.GOOGLE_SHEET_ID;
-  const sheetName =
-    target?.sheetName?.trim() ||
-    process.env.GOOGLE_SHEET_TAB_NAME?.trim() ||
-    "Sheet1";
+  const spreadsheetId = normalizeSpreadsheetId(
+    target?.spreadsheetId || process.env.GOOGLE_SHEET_ID
+  );
+  const sheetName = resolveSheetTabName(target?.sheetName);
 
   if (!spreadsheetId) {
     throw new Error("GOOGLE_SHEET_ID is not configured");
@@ -75,7 +123,7 @@ export async function appendRow(
   const sheets = getSheetsClient();
   const response = await sheets.spreadsheets.values.append({
     spreadsheetId,
-    range: `${sheetName}!A:A`,
+    range: appendRangeForTab(sheetName),
     valueInputOption: "USER_ENTERED",
     insertDataOption: "INSERT_ROWS",
     requestBody: {
