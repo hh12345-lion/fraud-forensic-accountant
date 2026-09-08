@@ -1,6 +1,7 @@
 "use client";
 
 import { SITE_EMAIL } from "@/lib/site";
+import { submitNetlifyForm } from "@/lib/submitNetlifyForm";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
@@ -63,6 +64,18 @@ export function InstructForm() {
         return;
       }
 
+      try {
+        await submitNetlifyForm("instruct", {
+          name: payload.fullName,
+          email: payload.email,
+          phone: payload.phone,
+          organization: payload.organization,
+          message: payload.message,
+        });
+      } catch {
+        // Webhook/Sheets already stored the instruction; don't block the visitor.
+      }
+
       router.push("/thank-you");
     } catch {
       setStatus("error");
@@ -71,7 +84,13 @@ export function InstructForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form name="instruct" method="POST" action="/__forms.html" onSubmit={handleSubmit} className="space-y-4">
+      <input type="hidden" name="form-name" value="instruct" />
+      <p className="hidden" aria-hidden="true">
+        <label>
+          Do not fill this out: <input name="bot-field" tabIndex={-1} autoComplete="off" />
+        </label>
+      </p>
       <div>
         <label htmlFor="instruct-name" className="mb-1 block text-sm font-medium text-heading">
           Name *

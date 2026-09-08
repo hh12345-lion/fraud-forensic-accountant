@@ -1,6 +1,7 @@
 "use client";
 
 import { SITE_EMAIL } from "@/lib/site";
+import { submitNetlifyForm } from "@/lib/submitNetlifyForm";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
@@ -62,6 +63,16 @@ export function ContactForm() {
         return;
       }
 
+      try {
+        await submitNetlifyForm("contact", {
+          name: payload.fullName,
+          email: payload.email,
+          message: payload.message,
+        });
+      } catch {
+        // Webhook/Sheets already stored the enquiry; don't block the visitor.
+      }
+
       router.push("/thank-you");
     } catch {
       setStatus("error");
@@ -70,7 +81,13 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form name="contact" method="POST" action="/__forms.html" onSubmit={handleSubmit} className="space-y-4">
+      <input type="hidden" name="form-name" value="contact" />
+      <p className="hidden" aria-hidden="true">
+        <label>
+          Do not fill this out: <input name="bot-field" tabIndex={-1} autoComplete="off" />
+        </label>
+      </p>
       <div>
         <label htmlFor="name" className="mb-1 block text-sm font-medium text-heading">
           Name *
