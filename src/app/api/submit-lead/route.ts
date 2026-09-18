@@ -18,6 +18,13 @@ export async function POST(request: NextRequest) {
       formType?: string;
       organisation?: string;
       skipSheet?: boolean;
+      Message?: string;
+      description?: string;
+      enquiry?: string;
+      details?: string;
+      summary?: string;
+      notes?: string;
+      matter?: string;
     };
 
     const fullName = sanitizeLeadText(body.fullName ?? "", 200);
@@ -53,10 +60,26 @@ export async function POST(request: NextRequest) {
       fraudType: sanitizeLeadText(body.fraudType ?? "", 120),
       fraudValue: sanitizeLeadText(body.fraudValue ?? "", 80),
       urgent: sanitizeLeadText(body.urgent ?? "", 80),
-      message: sanitizeLeadText(body.message ?? "", 4000),
+      message: sanitizeLeadText(
+        body.message ??
+          body.Message ??
+          body.description ??
+          body.enquiry ??
+          body.details ??
+          body.summary ??
+          body.notes ??
+          body.matter ??
+          "",
+        4000
+      ),
     };
 
-    const result = await notifyLeadWebhook({ fullName, email, phone });
+    const result = await notifyLeadWebhook({
+      fullName,
+      email,
+      phone,
+      message: lead.message,
+    });
 
     const writtenToSheet = skipSheet
       ? false
