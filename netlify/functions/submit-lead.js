@@ -158,7 +158,24 @@ exports.handler = async function handler(event) {
       : typeof body.organisation === "string"
         ? body.organisation.trim()
         : "";
-  const message = typeof body.message === "string" ? body.message.trim() : "";
+  const message = (() => {
+    const keys = [
+      "message",
+      "Message",
+      "description",
+      "enquiry",
+      "details",
+      "summary",
+      "notes",
+      "matter",
+    ];
+    for (const key of keys) {
+      if (body[key] != null && String(body[key]).trim()) {
+        return String(body[key]).trim();
+      }
+    }
+    return "";
+  })();
   const skipSheet = body.skipSheet === true;
 
   if (!fullName || !email) {
@@ -190,6 +207,7 @@ exports.handler = async function handler(event) {
       "Phone Number": phone,
       "Brand name": BRAND_NAME,
       domain: getSiteDomain(),
+      message,
     };
 
     try {
