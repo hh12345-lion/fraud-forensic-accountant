@@ -10,20 +10,20 @@ import { ResponsiveTable } from "@/components/ResponsiveTable";
 import { services } from "@/data/services";
 
 const enforcementFacts = [
-  { fact: "DOJ corporate fraud enforcement priority", figure: "Expanded 2025", source: "DOJ Criminal Division" },
-  { fact: "SEC enforcement actions (FY2025)", figure: "784+", source: "SEC Annual Report" },
-  { fact: "FCPA self-reporting credit policy", figure: "Updated 2025", source: "DOJ/SEC guidance" },
+  { fact: "Corporate fraud enforcement priority", figure: "Expanded 2025", source: "Major regulators" },
+  { fact: "Securities enforcement actions (FY2025)", figure: "Elevated", source: "Market regulators" },
+  { fact: "Anti-bribery self-reporting credit policy", figure: "Updated 2025", source: "Enforcement guidance" },
   {
-    fact: "IRS whistleblower awards (large cases)",
+    fact: "Whistleblower awards (large cases)",
     figure: "15–30% of recovery",
-    source: "IRS Whistleblower Program",
+    source: "Whistleblower programs",
   },
-  { fact: "FinCEN beneficial ownership rule", figure: "Fully effective 2025", source: "FinCEN" },
-  { fact: "Digital asset SEC registration deadline", figure: "2027", source: "SEC rulemaking" },
+  { fact: "Beneficial ownership transparency rules", figure: "Widely effective 2025", source: "AML frameworks" },
+  { fact: "Digital asset registration timelines", figure: "Phased through 2027", source: "Market rulemaking" },
   {
     fact: "Corporate cooperation policy",
     figure: "Early disclosure incentivized",
-    source: "DOJ Corporate Enforcement Policy",
+    source: "Enforcement policy updates",
   },
 ];
 
@@ -150,8 +150,9 @@ export default function HomePage() {
             </table>
           </ResponsiveTable>
           <p className="mt-4 text-xs text-muted">
-            Sources: DOJ Criminal Division; SEC Annual Report; DOJ/SEC FCPA guidance; IRS Whistleblower
-            Program; FinCEN; SEC rulemaking; DOJ Corporate Enforcement Policy.
+            Sources: major criminal and securities enforcement agencies; anti-bribery guidance;
+            whistleblower programs; AML beneficial ownership frameworks; digital asset rulemaking;
+            corporate cooperation policies.
           </p>
         </div>
       </section>
@@ -165,7 +166,7 @@ export default function HomePage() {
             {[
               {
                 title: "Criminal Defense",
-                desc: "Defending individuals or corporations facing DOJ, SEC, FBI, or IRS fraud investigations. Asset forfeiture analysis, benefit calculation, and defense support.",
+                desc: "Defending individuals or corporations facing criminal or regulatory fraud investigations. Asset forfeiture analysis, benefit calculation, and defense support.",
                 href: "/who-we-help/criminal-defence-solicitors",
               },
               {

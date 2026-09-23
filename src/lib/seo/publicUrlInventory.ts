@@ -3,6 +3,7 @@ import { services } from "../../data/services";
 import { fraudTypes } from "../../data/fraud-types";
 import { caseTypes } from "../../data/case-types";
 import { guides } from "../../data/guides";
+import { getBlogSlugs } from "../blog";
 import { filterSitemapPaths } from "./sitemap-policy";
 
 /** Paths indexed for search (excludes noindex utility/legal pages). */
@@ -21,6 +22,7 @@ export const APP_STATIC_PATHS = [
   "/how-to-instruct",
   "/fees",
   "/faq",
+  "/blog",
   "/guides",
   "/experts",
   "/glossary",
@@ -39,6 +41,7 @@ export function buildPublicUrlInventory(): PublicUrlInventory {
     ...fraudTypes.map((f) => `/fraud-types/${f.slug}`),
     ...caseTypes.map((c) => `/case-types/${c.slug}`),
     ...guides.map((g) => `/guides/${g.slug}`),
+    ...getBlogSlugs().map((slug) => `/blog/${slug}`),
   ];
 
   const allPaths = [...new Set([...APP_STATIC_PATHS, ...dynamicPaths])].sort();
@@ -82,9 +85,9 @@ export function getSitemapPriority(path: string): number {
   )
     return 0.88;
   if (path.startsWith("/case-types/")) return 0.88;
-  if (path === "/faq" || path === "/guides") return 0.87;
+  if (path === "/faq" || path === "/guides" || path === "/blog") return 0.87;
   if (path === "/guides/sfo-enforcement-update-2025") return 0.85;
-  if (path.startsWith("/guides/")) return 0.8;
+  if (path.startsWith("/guides/") || path.startsWith("/blog/")) return 0.8;
   if (path === "/experts") return 0.8;
   if (path === "/glossary") return 0.75;
   if (path === "/cookies") return 0.5;
@@ -93,6 +96,7 @@ export function getSitemapPriority(path: string): number {
 
 export function getSitemapChangeFreq(path: string): string {
   if (path === "/") return "weekly";
+  if (path === "/blog" || path.startsWith("/blog/")) return "weekly";
   if (path === "/guides" || path.startsWith("/guides/")) return "weekly";
   if (path === "/privacy" || path === "/terms") return "yearly";
   return "monthly";

@@ -10,6 +10,8 @@ import { SITE_URL } from "@/lib/site";
 import { SITE_LOCALE } from "@/lib/region";
 import Script from "next/script";
 
+export const dynamic = "force-dynamic";
+
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
@@ -31,9 +33,9 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   ...buildMetadata({
-    title: "Fraud Forensic Accountant | Global Civil & Criminal Fraud Investigations",
+    title: "Fraud Forensic Accountant | Civil & Criminal Fraud Investigations",
     description:
-      "Find a qualified fraud forensic accountant worldwide. Expert witnesses and investigators for civil fraud recovery, criminal defense, DOJ and SEC investigations, asset tracing, and corporate compliance.",
+      "Find a qualified fraud forensic accountant worldwide. Expert witnesses and investigators for civil fraud recovery, criminal defense, regulatory investigations, asset tracing, and corporate compliance.",
     path: "/",
   }),
 };

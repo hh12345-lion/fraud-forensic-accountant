@@ -1,5 +1,5 @@
-export const SITE_LOCALE = "en-US" as const;
-export const SITE_REGION_LABEL = "Global";
+export const SITE_LOCALE = "en" as const;
+export const SITE_REGION_LABEL = "Worldwide";
 export const SITE_JURISDICTION_NOTE =
   "Content reflects international fraud investigation practice. Specific legal frameworks vary by jurisdiction.";
 

@@ -18,6 +18,7 @@ export const caseTypeNavLinks = caseTypes.map((c) => ({
 }));
 
 export const resourcesNavLinks = [
+  { href: "/blog", label: "Blog" },
   { href: "/guides", label: "Guides" },
   { href: "/how-to-instruct", label: "How to Engage" },
   { href: "/qualifications", label: "Qualifications" },

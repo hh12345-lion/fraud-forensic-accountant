@@ -54,7 +54,7 @@ export const siteFaqs: FaqItem[] = [
   {
     question: "How much does a fraud forensic accountant cost?",
     answer:
-      "Investigation fees typically range from $150-$350/hour regionally to $300-$600/hour for senior London specialists. Expert witness reports range from $5,000-$20,000 for standard civil fraud matters to $20,000-$75,000+ for complex POCA or SFO cases. DPA financial quantification may cost $30,000-$200,000+. Emergency freezing injunction support is available at premium rates.",
+      "Investigation fees typically range from $150-$350/hour regionally to $300-$600/hour for senior specialists. Expert witness reports range from $5,000-$20,000 for standard civil fraud matters to $20,000-$75,000+ for complex confiscation or major regulatory cases. DPA financial quantification may cost $30,000-$200,000+. Emergency freezing injunction support is available at premium rates.",
   },
   {
     question: "What is legal professional privilege in fraud investigations?",
