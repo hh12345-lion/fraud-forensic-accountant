@@ -18,7 +18,7 @@ export function BottomCTA({
         <p className="mt-4 text-lg text-white/75">{description}</p>
         <Link
           href={buttonHref}
-          className="mt-8 inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-sm bg-copper px-8 py-3 text-base font-semibold text-white transition hover:bg-copper-light"
+          className="mt-8 inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-mint px-8 py-3 text-base font-semibold text-navy transition hover:bg-white"
         >
           {buttonText}
         </Link>

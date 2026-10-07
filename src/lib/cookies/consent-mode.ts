@@ -1,5 +1,5 @@
 /**
- * Google Consent Mode v2 — updates gtag when user changes preferences.
+ * Google Consent Mode v2: updates gtag when user changes preferences.
  * Default denied state is set before any Google script loads.
  */
 

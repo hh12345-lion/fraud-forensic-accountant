@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Blog — Fraud Forensic Accountant Insights",
+  title: "Blog | Fraud Forensic Accountant Insights",
   description:
     "Articles on forensic accounting methodology, reviewing large financial datasets, and instructing fraud forensic accountants.",
   path: "/blog",

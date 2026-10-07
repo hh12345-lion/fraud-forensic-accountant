@@ -66,6 +66,7 @@ export const organizationSchema = {
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: SITE_URL,
+  logo: `${SITE_URL}/brand/icon-512.png`,
   email: SITE_EMAIL,
   sameAs: [LINKEDIN_URL],
 };

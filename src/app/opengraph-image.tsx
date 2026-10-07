@@ -16,15 +16,15 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 64,
-          background: "#F5F2ED",
-          color: "#0C1929",
+          background: "#16211E",
+          color: "#F5F5F5",
         }}
       >
         <div
           style={{
             width: 4,
             height: 80,
-            background: "#B87333",
+            background: "#6B8DB2",
             marginBottom: 32,
           }}
         />
@@ -32,7 +32,7 @@ export default function OpenGraphImage() {
           style={{
             fontSize: 24,
             fontWeight: 600,
-            color: "#B87333",
+            color: "#93ECE1",
             marginBottom: 12,
             letterSpacing: "0.15em",
             textTransform: "uppercase",
@@ -43,7 +43,7 @@ export default function OpenGraphImage() {
         <div style={{ fontSize: 56, fontWeight: 600, lineHeight: 1.15, maxWidth: 900 }}>
           Fraud Forensic Accountant
         </div>
-        <div style={{ fontSize: 26, marginTop: 24, color: "#475569" }}>
+        <div style={{ fontSize: 26, marginTop: 24, color: "#B8DBD9" }}>
           Civil and criminal fraud investigations · Asset tracing · Expert testimony
         </div>
       </div>

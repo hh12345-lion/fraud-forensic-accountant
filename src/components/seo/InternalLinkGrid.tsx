@@ -22,7 +22,7 @@ export function InternalLinkGrid({
   return (
     <nav aria-label={title} className={`mt-10 border-t border-border pt-8 ${className}`}>
       <h2 className="!mt-0 text-xl font-bold text-heading">{title}</h2>
-      <ul className={`mt-4 grid gap-2 ${colClass}`}>
+      <ul className={`mt-4 grid !list-none gap-2 !pl-0 ${colClass}`}>
         {links.map((link) => (
           <li key={link.href}>
             <Link

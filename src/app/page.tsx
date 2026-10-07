@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { EnforcementBanner } from "@/components/EnforcementBanner";
 import { BottomCTA } from "@/components/BottomCTA";
@@ -8,6 +9,49 @@ import { HOMEPAGE_HUB_LINKS } from "@/lib/seo/internal-links";
 import { InternalLinkGrid } from "@/components/seo/InternalLinkGrid";
 import { ResponsiveTable } from "@/components/ResponsiveTable";
 import { services } from "@/data/services";
+import { MoneyTrail } from "@/components/MoneyTrail";
+import { images } from "@/lib/images";
+
+const routes = [
+  {
+    title: "Criminal Defense",
+    desc: "Defending individuals or corporations facing criminal or regulatory fraud investigations. Asset forfeiture analysis, benefit calculation, and defense support.",
+    href: "/who-we-help/criminal-defence-solicitors",
+  },
+  {
+    title: "Civil Fraud Recovery",
+    desc: "Pursuing fraudsters through civil proceedings: asset freezes, tracing, discovery orders, civil RICO, and private prosecution support.",
+    href: "/who-we-help/civil-fraud-solicitors",
+  },
+  {
+    title: "Corporate / Internal",
+    desc: "Internal investigations, regulatory self-disclosure preparation, deferred prosecution agreement support, FCPA compliance advisory, and remediation assessment.",
+    href: "/who-we-help/corporations-compliance",
+  },
+];
+
+const credentials = [
+  {
+    label: "Certified specialists",
+    note: "Fraud examiners and CPA forensic accountants",
+    icon: "M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3zm-3 9l2 2 4-4",
+  },
+  {
+    label: "Asset tracing",
+    note: "Financial reconstruction across accounts",
+    icon: "M4 17l5-5 4 4 7-8M15 8h5v5",
+  },
+  {
+    label: "Expert witness reports",
+    note: "For trial and arbitration",
+    icon: "M7 3h7l5 5v13H7V3zm7 0v5h5M10 13h6M10 17h6",
+  },
+  {
+    label: "Cross-border support",
+    note: "Investigations across jurisdictions",
+    icon: "M12 21a9 9 0 100-18 9 9 0 000 18zM3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z",
+  },
+];
 
 const enforcementFacts = [
   { fact: "Corporate fraud enforcement priority", figure: "Expanded 2025", source: "Major regulators" },
@@ -31,8 +75,8 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={homepageGraph()} />
-      <section className="border-b border-border bg-stone py-16 md:py-24">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
+      <section className="bg-stone pt-14 md:pt-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
           <div className="lg:col-span-7">
             <p className="text-xs font-semibold tracking-[0.2em] text-copper uppercase">
               Global forensic accounting
@@ -47,51 +91,80 @@ export default function HomePage() {
               FraudForensicAccountant.com connects law firms and corporations with qualified fraud
               forensic accountants across jurisdictions worldwide.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href="/who-we-help/criminal-defence-solicitors"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-sm bg-copper px-6 py-3 font-semibold text-white hover:bg-copper-light"
-              >
-                Criminal Defense
-              </Link>
-              <Link
-                href="/who-we-help/civil-fraud-solicitors"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-navy/20 bg-white px-6 py-3 font-semibold text-navy hover:border-copper hover:text-copper"
-              >
-                Civil Fraud Recovery
-              </Link>
-              <Link
-                href="/who-we-help/corporations-compliance"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-sm border border-navy/20 bg-white px-6 py-3 font-semibold text-navy hover:border-copper hover:text-copper"
-              >
-                Corporate / Internal
-              </Link>
-            </div>
           </div>
-          <div className="flex items-center lg:col-span-5">
-            <div className="w-full border-l-4 border-copper bg-white p-8 shadow-[var(--shadow-card)]">
-              <h2 className="font-display text-xl font-semibold text-navy">What we connect you with</h2>
-              <ul className="mt-4 space-y-3 text-sm text-body">
-                <li className="flex gap-2">
-                  <span className="text-copper">—</span>
-                  Certified fraud examiners and CPA forensic specialists
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-copper">—</span>
-                  Asset tracing and financial reconstruction
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-copper">—</span>
-                  Expert witness reports for trial and arbitration
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-copper">—</span>
-                  Cross-border investigation support
-                </li>
-              </ul>
+          <div className="hidden justify-center lg:col-span-5 lg:flex">
+            <div className="monogram-mask relative aspect-[282/341] w-full max-w-[19rem] bg-copper">
+              <Image
+                src={images.depositBoxes.src}
+                alt={images.depositBoxes.alt}
+                fill
+                preload
+                quality={60}
+                sizes="320px"
+                className="object-cover opacity-70 mix-blend-luminosity"
+              />
+              <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-mint/25 via-transparent to-navy/45" />
             </div>
           </div>
         </div>
+
+        {/* Route selector */}
+        <div className="mx-auto mt-12 max-w-6xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Choose your route</p>
+          <div className="mt-4 grid gap-5 md:grid-cols-3">
+            {routes.map((route, i) => (
+              <Link
+                key={route.href}
+                href={route.href}
+                className={`group flex flex-col rounded-xl p-6 shadow-[var(--shadow-elevated)] transition hover:-translate-y-1 md:translate-y-8 md:hover:translate-y-7 ${
+                  i === 0 ? "bg-navy text-white" : "border border-border bg-white"
+                }`}
+              >
+                <span className={`font-mono text-xs ${i === 0 ? "text-mint" : "text-copper"}`}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h2 className={`mt-3 font-display text-xl font-semibold ${i === 0 ? "text-white" : "text-navy"}`}>
+                  {route.title}
+                </h2>
+                <p className={`mt-2 flex-1 text-sm leading-relaxed ${i === 0 ? "text-white/75" : "text-body"}`}>
+                  {route.desc}
+                </p>
+                <span
+                  className={`mt-5 inline-flex h-10 w-10 items-center justify-center rounded-full transition group-hover:translate-x-1 ${
+                    i === 0 ? "bg-mint text-navy" : "bg-copper text-white"
+                  }`}
+                  aria-hidden
+                >
+                  →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials strip */}
+      <section aria-label="What we connect you with" className="border-b border-border bg-white pt-6 md:pt-16">
+        <ul className="mx-auto grid max-w-6xl px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+          {credentials.map((c, i) => (
+            <li
+              key={c.label}
+              className={`flex items-center gap-4 border-border py-6 ${i > 0 ? "border-t sm:border-t-0" : ""} ${
+                i % 2 === 1 ? "sm:border-l sm:pl-6" : ""
+              } ${i > 1 ? "sm:border-t lg:border-t-0" : ""} ${i === 2 ? "lg:border-l lg:pl-6" : ""} lg:pr-6`}
+            >
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-mist text-navy">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden>
+                  <path d={c.icon} />
+                </svg>
+              </span>
+              <span>
+                <span className="block font-display text-lg font-semibold leading-tight text-navy">{c.label}</span>
+                <span className="block text-[13px] text-muted">{c.note}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <EnforcementBanner />
@@ -117,6 +190,8 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      <MoneyTrail />
 
       <section className="bg-stone py-14 md:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -157,45 +232,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-14 md:py-16">
+      <section className="py-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-2xl font-semibold text-navy sm:text-3xl">
-            Three Types of Clients We Serve
-          </h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {[
-              {
-                title: "Criminal Defense",
-                desc: "Defending individuals or corporations facing criminal or regulatory fraud investigations. Asset forfeiture analysis, benefit calculation, and defense support.",
-                href: "/who-we-help/criminal-defence-solicitors",
-              },
-              {
-                title: "Civil Fraud Recovery",
-                desc: "Pursuing fraudsters through civil proceedings: asset freezes, tracing, discovery orders, civil RICO, and private prosecution support.",
-                href: "/who-we-help/civil-fraud-solicitors",
-              },
-              {
-                title: "Corporate / Internal",
-                desc: "Internal investigations, regulatory self-disclosure preparation, deferred prosecution agreement support, FCPA compliance advisory, and remediation assessment.",
-                href: "/who-we-help/corporations-compliance",
-              },
-            ].map((card) => (
-              <Link
-                key={card.href}
-                href={card.href}
-                className="group block border border-border bg-white p-6 shadow-[var(--shadow-elevated)] hover:border-copper/40"
-              >
-                <h3 className="font-display text-lg font-semibold text-navy group-hover:text-copper">
-                  {card.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-body">{card.desc}</p>
-                <span className="mt-4 inline-block text-sm font-medium text-copper">
-                  Learn more →
-                </span>
-              </Link>
-            ))}
-          </div>
-          <p className="mt-8 text-center text-body">
+          <p className="text-center text-body">
             New to fraud forensic accounting?{" "}
             <Link
               href="/what-is-a-fraud-forensic-accountant"

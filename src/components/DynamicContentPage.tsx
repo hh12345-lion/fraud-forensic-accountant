@@ -20,7 +20,7 @@ export function DynamicContentPage({
 
   return (
     <>
-      <ContentSection>
+      <ContentSection aside>
         {page.paragraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}

@@ -62,7 +62,7 @@ export default async function GuidePage({
           { label: page.title },
         ]}
       />
-      <ContentSection>
+      <ContentSection aside>
         {page.paragraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}

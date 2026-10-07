@@ -11,7 +11,7 @@ export function CardGrid({
         <Link
           key={item.href}
           href={item.href}
-          className="group block border border-border bg-white p-6 shadow-[var(--shadow-elevated)] transition hover:border-copper/40"
+          className="group block rounded-xl border border-border bg-white p-6 shadow-[var(--shadow-card)] transition hover:-translate-y-0.5 hover:border-copper/50 hover:shadow-[var(--shadow-elevated)]"
         >
           <h3 className="font-display text-lg font-semibold text-navy group-hover:text-copper">
             {item.title}

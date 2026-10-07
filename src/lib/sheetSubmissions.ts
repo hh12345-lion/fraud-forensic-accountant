@@ -63,7 +63,7 @@ export async function writeSubmissionToSheetSafely(
   context: string
 ): Promise<boolean> {
   if (!isGoogleSheetsConfigured()) {
-    console.warn(`[sheets] not configured — skip (${context})`);
+    console.warn(`[sheets] not configured: skip (${context})`);
     return false;
   }
 

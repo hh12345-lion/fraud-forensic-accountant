@@ -79,7 +79,7 @@ function sanitize(value) {
 
 async function appendLeadToSheet(payload) {
   if (!isGoogleSheetsConfigured()) {
-    console.warn("[submit-lead fn] Sheets not configured — skip");
+    console.warn("[submit-lead fn] Sheets not configured: skip");
     return false;
   }
 
@@ -191,7 +191,7 @@ exports.handler = async function handler(event) {
 
   if (!webhookUrl) {
     console.warn(
-      "Lead_notification_url not configured — lead logged but not forwarded."
+      "Lead_notification_url not configured: lead logged but not forwarded."
     );
     console.log("Lead submission:", {
       fullName,
