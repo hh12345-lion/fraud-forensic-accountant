@@ -29,7 +29,7 @@ const mobileGroups = [
       { href: "/who-we-help", label: "Overview" },
       { href: "/who-we-help/criminal-defence-solicitors", label: "Criminal Defense" },
       { href: "/who-we-help/civil-fraud-solicitors", label: "Civil Fraud" },
-      { href: "/who-we-help/corporates-compliance", label: "Corporations" },
+      { href: "/who-we-help/corporations-compliance", label: "Corporations" },
     ],
   },
   {

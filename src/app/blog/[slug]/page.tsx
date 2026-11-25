@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { fitTitle } from "@/lib/fit";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -18,7 +19,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   const url = `${SITE_URL}/blog/${post.slug}`;
-  const title = `${post.title} | ${SITE_NAME}`;
+  // Fitted to search-result limits (headlines ran to 100+ characters); shorter search title where set.
+  const title = fitTitle(`${post.seoTitle ?? post.title} | ${SITE_NAME}`);
   const images = post.image
     ? [{ url: post.image, alt: post.imageAlt || post.title }]
     : undefined;

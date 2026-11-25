@@ -1,4 +1,5 @@
 ﻿---
+seoTitle: "Reviewing Large Volumes of Financial Records"
 title: "How Forensic Accountants Review Large Volumes of Financial Records in Fraud Cases"
 description: "How fraud forensic accountants organise, filter, reconcile and document large volumes of financial records, and what affects the analysis."
 date: "2026-09-23"

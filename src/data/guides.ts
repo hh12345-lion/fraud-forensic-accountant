@@ -68,7 +68,8 @@ export const guides: GuidePage[] = [
   {
     slug: "crypto-fraud-forensic-guide",
     title: "Crypto Fraud Investigation Guide",
-    metaTitle: "Crypto Fraud Investigation: Forensic Accounting Guide for Attorneys",
+    // Previously "Crypto Fraud Investigation: Forensic Accounting Guide for Attorneys"; fitted it matched the crypto service page.
+    metaTitle: "Crypto Fraud Investigation Guide for Attorneys",
     metaDescription:
       "Crypto fraud forensic guide: blockchain analysis, wallet tracing, POCA crypto recovery, and FCA cryptoasset regulation 2027.",
     h1: "Crypto Fraud Investigation: Forensic Accounting Guide for Attorneys",

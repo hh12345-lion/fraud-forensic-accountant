@@ -1,4 +1,5 @@
 ---
+seoTitle: "Reviewing Financial Evidence in a Fraud Case"
 title: "What Solicitors Should Look for When Reviewing Financial Evidence in a Fraud Case"
 description: "What solicitors may check when reviewing financial evidence in a fraud case: the records available, date range, source, consistency, context, gaps, and when specialist analysis helps."
 date: "2026-10-08"
